@@ -7,6 +7,7 @@ const result = document.getElementById("result");
 const calculateBtn = document.getElementById("calculateBtn");
 const resetBtn = document.getElementById("resetBtn");
 const copyBtn = document.getElementById("copyBtn");
+const shareBtn = document.getElementById("shareBtn");
 
 let lastResult = "";
 
@@ -100,5 +101,37 @@ copyBtn.addEventListener("click",async()=>{
     await navigator.clipboard.writeText(lastResult);
 
     alert("Result copied!");
+
+});
+
+shareBtn.addEventListener("click", async () => {
+
+    if(lastResult===""){
+
+        alert("Nothing to share.");
+
+        return;
+
+    }
+
+    if(navigator.share){
+
+        try{
+
+            await navigator.share({
+
+                title:"Profit Margin Calculator",
+
+                text:lastResult
+
+            });
+
+        }catch(err){}
+
+    }else{
+
+        alert("Sharing is not supported on this device.");
+
+    }
 
 });
