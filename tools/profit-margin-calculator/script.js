@@ -7,6 +7,7 @@ const result = document.getElementById("result");
 const calculateBtn = document.getElementById("calculateBtn");
 const resetBtn = document.getElementById("resetBtn");
 const copyBtn = document.getElementById("copyBtn");
+const resultButtons = document.getElementById("resultButtons");
 const shareBtn = document.getElementById("shareBtn");
 
 let lastResult = "";
@@ -16,15 +17,39 @@ calculateBtn.addEventListener("click", () => {
     const cost = parseFloat(costInput.value);
     const selling = parseFloat(sellingInput.value);
 
-    if (isNaN(cost) || isNaN(selling) || cost <= 0 || selling <= 0) {
+    if (costInput.value === "" || sellingInput.value === "") {
 
-        result.innerHTML = "Please enter valid values.";
+    result.innerHTML = `
+    <div class="result-item">
+        <h4>Missing Information</h4>
+        <p>Please enter both Cost Price and Selling Price.</p>
+    </div>
+    `;
 
-        lastResult = "";
+    resultButtons.style.display = "none";
 
-        return;
+    lastResult = "";
 
-    }
+    return;
+
+}
+
+if (cost <= 0 || selling <= 0) {
+
+    result.innerHTML = `
+    <div class="result-item">
+        <h4>Invalid Value</h4>
+        <p>Values must be greater than zero.</p>
+    </div>
+    `;
+
+    resultButtons.style.display = "none";
+
+    lastResult = "";
+
+    return;
+
+}
 
     const profit = selling - cost;
     const margin = (profit / selling) * 100;
@@ -76,6 +101,8 @@ maximumFractionDigits:2
 
 });
 
+resultButtons.style.display = "flex";
+
 resetBtn.addEventListener("click",()=>{
 
     costInput.value="";
@@ -85,6 +112,8 @@ resetBtn.addEventListener("click",()=>{
     lastResult="";
 
     result.innerHTML="Enter values then tap Calculate.";
+
+resultButtons.style.display = "none";
 
 });
 
@@ -133,5 +162,19 @@ shareBtn.addEventListener("click", async () => {
         alert("Sharing is not supported on this device.");
 
     }
+
+});
+
+[costInput, sellingInput].forEach(input => {
+
+    input.addEventListener("keydown", function(e){
+
+        if(e.key === "Enter"){
+
+            calculateBtn.click();
+
+        }
+
+    });
 
 });
