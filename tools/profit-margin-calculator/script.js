@@ -21,35 +21,52 @@ calculateBtn.addEventListener("click", () => {
     }
 
     const profit = selling - cost;
-
     const margin = (profit / selling) * 100;
-
     const markup = (profit / cost) * 100;
 
+    const symbol = currency.value;
+
     result.innerHTML = `
-        <strong>Profit</strong><br>
-        ${currency.value}${profit.toLocaleString(undefined,{
+<div class="result-card">
+
+<div class="result-item">
+
+<h4>Profit</h4>
+
+<p>${symbol}${profit.toLocaleString(undefined,{
 minimumFractionDigits:2,
 maximumFractionDigits:2
-})}
-        <br><br>
+})}</p>
 
-        <strong>Profit Margin</strong><br>
-        ${margin.toFixed(2)}%
-        <br><br>
+</div>
 
-        <strong>Markup</strong><br>
-        ${markup.toFixed(2)}%
-    `;
+<div class="result-item">
+
+<h4>Profit Margin</h4>
+
+<p>${margin.toFixed(2)}%</p>
+
+</div>
+
+<div class="result-item">
+
+<h4>Markup</h4>
+
+<p>${markup.toFixed(2)}%</p>
+
+</div>
+
+</div>
+`;
 
 });
 
-resetBtn.addEventListener("click", () => {
+resetBtn.addEventListener("click",()=>{
 
-    costInput.value = "";
+    costInput.value="";
+    sellingInput.value="";
+    currency.selectedIndex=0;
 
-    sellingInput.value = "";
-
-    result.innerHTML = "Enter values then tap Calculate.";
+    result.innerHTML="Enter values then tap Calculate.";
 
 });

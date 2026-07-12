@@ -89,3 +89,49 @@ width:100%;
 }
 
 }
+
+.result-card{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.result-item{
+
+background:#F8FAFC;
+
+border:1px solid var(--border);
+
+border-radius:12px;
+
+padding:18px;
+
+}
+
+.result-item h4{
+
+margin:0 0 8px 0;
+
+font-size:15px;
+
+color:var(--text-light);
+
+}
+
+.result-item p{
+
+margin:0;
+
+font-size:28px;
+
+font-weight:700;
+
+color:var(--primary);
+
+word-break:break-word;
+
+}
