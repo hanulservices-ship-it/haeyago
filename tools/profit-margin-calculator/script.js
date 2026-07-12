@@ -12,6 +12,13 @@ const resultButtons = document.getElementById("resultButtons");
 
 let lastResult = "";
 
+function money(value, symbol) {
+    return symbol + value.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+}
+
 calculateBtn.addEventListener("click", () => {
 
     const cost = parseFloat(costInput.value);
@@ -20,11 +27,10 @@ calculateBtn.addEventListener("click", () => {
     if (costInput.value === "" || sellingInput.value === "") {
 
         result.innerHTML = `
-        <div class="result-item">
-            <h4>Missing Information</h4>
-            <p>Please enter both Cost Price and Selling Price.</p>
-        </div>
-        `;
+<div class="result-item">
+<h4>Missing Information</h4>
+<p>Please enter both Cost Price and Selling Price.</p>
+</div>`;
 
         resultButtons.style.display = "none";
         lastResult = "";
@@ -35,11 +41,10 @@ calculateBtn.addEventListener("click", () => {
     if (cost <= 0 || selling <= 0) {
 
         result.innerHTML = `
-        <div class="result-item">
-            <h4>Invalid Value</h4>
-            <p>Values must be greater than zero.</p>
-        </div>
-        `;
+<div class="result-item">
+<h4>Invalid Value</h4>
+<p>Values must be greater than zero.</p>
+</div>`;
 
         resultButtons.style.display = "none";
         lastResult = "";
@@ -47,31 +52,38 @@ calculateBtn.addEventListener("click", () => {
 
     }
 
+    const symbol = currency.value;
+
     const profit = selling - cost;
     const margin = (profit / selling) * 100;
     const markup = (profit / cost) * 100;
-
-    const symbol = currency.value;
+    const roi = (profit / cost) * 100;
 
     lastResult =
-`Profit: ${symbol}${profit.toLocaleString(undefined,{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-})}
-
+`Cost Price: ${money(cost,symbol)}
+Selling Price: ${money(selling,symbol)}
+Profit: ${money(profit,symbol)}
 Profit Margin: ${margin.toFixed(2)}%
-
-Markup: ${markup.toFixed(2)}%`;
+Markup: ${markup.toFixed(2)}%
+ROI: ${roi.toFixed(2)}%`;
 
     result.innerHTML = `
+
 <div class="result-card">
 
 <div class="result-item">
+<h4>Cost Price</h4>
+<p>${money(cost,symbol)}</p>
+</div>
+
+<div class="result-item">
+<h4>Selling Price</h4>
+<p>${money(selling,symbol)}</p>
+</div>
+
+<div class="result-item">
 <h4>Profit</h4>
-<p>${symbol}${profit.toLocaleString(undefined,{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-})}</p>
+<p>${money(profit,symbol)}</p>
 </div>
 
 <div class="result-item">
@@ -84,7 +96,13 @@ maximumFractionDigits:2
 <p>${markup.toFixed(2)}%</p>
 </div>
 
-</div>`;
+<div class="result-item">
+<h4>ROI</h4>
+<p>${roi.toFixed(2)}%</p>
+</div>
+
+</div>
+`;
 
     resultButtons.style.display = "flex";
 
@@ -133,9 +151,7 @@ shareBtn.addEventListener("click", async () => {
                 text: lastResult
             });
 
-        } catch (err) {
-            // User cancelled sharing
-        }
+        } catch (err) {}
 
     } else {
 
@@ -147,7 +163,7 @@ shareBtn.addEventListener("click", async () => {
 
 [costInput, sellingInput].forEach(input => {
 
-    input.addEventListener("keydown", function (e) {
+    input.addEventListener("keydown", e => {
 
         if (e.key === "Enter") {
             calculateBtn.click();
