@@ -1,5 +1,6 @@
 const costInput = document.getElementById("cost");
 const sellingInput = document.getElementById("selling");
+const currency = document.getElementById("currency");
 
 const result = document.getElementById("result");
 
@@ -27,7 +28,10 @@ calculateBtn.addEventListener("click", () => {
 
     result.innerHTML = `
         <strong>Profit</strong><br>
-        ₱${profit.toFixed(2)}
+        ${currency.value}${profit.toLocaleString(undefined,{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+})}
         <br><br>
 
         <strong>Profit Margin</strong><br>
