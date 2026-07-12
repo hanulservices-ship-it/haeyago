@@ -6,15 +6,20 @@ const result = document.getElementById("result");
 
 const calculateBtn = document.getElementById("calculateBtn");
 const resetBtn = document.getElementById("resetBtn");
+const copyBtn = document.getElementById("copyBtn");
+
+let lastResult = "";
 
 calculateBtn.addEventListener("click", () => {
 
     const cost = parseFloat(costInput.value);
     const selling = parseFloat(sellingInput.value);
 
-    if (isNaN(cost) || isNaN(selling) || cost <= 0) {
+    if (isNaN(cost) || isNaN(selling) || cost <= 0 || selling <= 0) {
 
         result.innerHTML = "Please enter valid values.";
+
+        lastResult = "";
 
         return;
 
@@ -25,6 +30,16 @@ calculateBtn.addEventListener("click", () => {
     const markup = (profit / cost) * 100;
 
     const symbol = currency.value;
+
+    lastResult =
+`Profit: ${symbol}${profit.toLocaleString(undefined,{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+})}
+
+Profit Margin: ${margin.toFixed(2)}%
+
+Markup: ${markup.toFixed(2)}%`;
 
     result.innerHTML = `
 <div class="result-card">
@@ -56,8 +71,7 @@ maximumFractionDigits:2
 
 </div>
 
-</div>
-`;
+</div>`;
 
 });
 
@@ -67,6 +81,24 @@ resetBtn.addEventListener("click",()=>{
     sellingInput.value="";
     currency.selectedIndex=0;
 
+    lastResult="";
+
     result.innerHTML="Enter values then tap Calculate.";
+
+});
+
+copyBtn.addEventListener("click",async()=>{
+
+    if(lastResult===""){
+
+        alert("Nothing to copy.");
+
+        return;
+
+    }
+
+    await navigator.clipboard.writeText(lastResult);
+
+    alert("Result copied!");
 
 });
