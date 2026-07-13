@@ -1,29 +1,88 @@
-const search = document.getElementById("toolSearch");
+// ===================================
+// HaeyaGo Global Script v1.0
+// ===================================
 
-if(search){
+document.addEventListener("DOMContentLoaded", () => {
 
-search.addEventListener("input", function(){
+    console.log("HaeyaGo Loaded");
 
-const keyword = this.value.toLowerCase();
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-const cards = document.querySelectorAll("#tools .card");
+        link.addEventListener("click", function(e){
 
-cards.forEach(card=>{
+            const target = document.querySelector(this.getAttribute("href"));
 
-const text = card.textContent.toLowerCase();
+            if(target){
 
-if(text.includes(keyword)){
+                e.preventDefault();
 
-card.style.display="block";
+                target.scrollIntoView({
 
-}else{
+                    behavior:"smooth"
 
-card.style.display="none";
+                });
+
+            }
+
+        });
+
+    });
+
+});
+
+// ===================================
+// Utility Functions
+// ===================================
+
+function formatNumber(value, decimals = 2){
+
+    return Number(value).toLocaleString(undefined,{
+
+        minimumFractionDigits:decimals,
+
+        maximumFractionDigits:decimals
+
+    });
 
 }
 
-});
+function copyText(text){
 
-});
+    navigator.clipboard.writeText(text)
+    .then(()=>{
+
+        alert("Copied to clipboard!");
+
+    })
+    .catch(()=>{
+
+        alert("Unable to copy.");
+
+    });
+
+}
+
+async function shareResult(title,text){
+
+    if(navigator.share){
+
+        try{
+
+            await navigator.share({
+
+                title:title,
+
+                text:text
+
+            });
+
+        }catch(err){}
+
+    }else{
+
+        alert("Sharing is not supported on this device.");
+
+    }
 
 }
