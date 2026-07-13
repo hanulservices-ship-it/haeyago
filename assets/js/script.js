@@ -3,7 +3,7 @@ const tools = [
 {
 name:"Profit Margin Calculator",
 description:"Calculate profit, markup and margin.",
-url:"tools/profit-margin-calculator/index.html"
+url:"tools/profit-margin/index.html"
 },
 
 {
