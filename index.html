@@ -4,17 +4,13 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HaeyaGo | Free Business Tools That Help You Get Things Done</title>
+<title>HaeyaGo | Free Business & Productivity Tools</title>
 
-<meta name="description" content="Free business calculators, generators, finance, shipping and productivity tools.">
-
-<meta name="theme-color" content="#2563EB">
+<meta name="description" content="HaeyaGo offers free business, finance, logistics, and productivity tools for entrepreneurs, freelancers, online sellers, and professionals.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -29,7 +25,7 @@
 
 <div class="container navbar">
 
-<a href="index.html" class="logo">
+<a class="logo" href="index.html">
 
 Haeya<span>Go</span>
 
@@ -37,11 +33,9 @@ Haeya<span>Go</span>
 
 <nav>
 
-<a href="#">Tools</a>
-
-<a href="#">Categories</a>
-
-<a href="#">About</a>
+<a href="#tools">Tools</a>
+<a href="#categories">Categories</a>
+<a href="#about">About</a>
 
 </nav>
 
@@ -49,19 +43,43 @@ Haeya<span>Go</span>
 
 </header>
 
+<main>
+
 <section class="hero">
 
 <div class="container">
 
 <h1>
 
-Free Business Tools That Help You Get Things Done
+Free Business & Productivity Tools
 
 </h1>
 
 <p>
 
-Generate business documents, calculate finances, simplify operations, and boost productivity — all in one place.
+Professional calculators, generators, converters, and business utilities designed for entrepreneurs, freelancers, online sellers, and growing businesses.
+
+</p>
+
+<section class="hero">
+
+<div class="container">
+
+<p class="hero-tag">
+
+Built for Online Sellers, Freelancers & Small Businesses
+
+</p>
+
+<h1>
+
+Business tools that save you time.
+
+</h1>
+
+<p>
+
+Free calculators, generators, logistics tools, financial utilities, and business resources designed to help you work faster and smarter.
 
 </p>
 
@@ -69,13 +87,24 @@ Generate business documents, calculate finances, simplify operations, and boost 
 
 <input
 type="text"
-placeholder="Search for a tool...">
+id="toolSearch"
+placeholder="Search tools (e.g. profit, invoice, shipping...)">
 
-<button>
+</div>
 
-Search
+<div class="buttons">
 
-</button>
+<a class="btn-primary" href="#tools">
+
+Explore Tools
+
+</a>
+
+<a class="btn-secondary" href="#about">
+
+Learn More
+
+</a>
 
 </div>
 
@@ -83,149 +112,55 @@ Search
 
 </section>
 
-<section class="categories">
+<section class="container" id="categories">
 
-<div class="container">
-
-<h2 class="section-title">
+<h2>
 
 Popular Categories
 
 </h2>
 
-<div class="category-grid">
+<div class="card">
 
-<a href="#" class="category-card">
+<p>
 
-<div class="category-icon">📊</div>
+📊 Business · 💰 Finance · 🚚 Logistics · 📦 Ecommerce · 🧾 Documents · ⚙ Utilities
 
-<h3>Calculators</h3>
-
-<p>Business, finance, tax, and productivity calculators.</p>
-
-</a>
-
-<a href="#" class="category-card">
-
-<div class="category-icon">📄</div>
-
-<h3>Documents</h3>
-
-<p>Invoices, quotations, receipts, and business forms.</p>
-
-</a>
-
-<a href="#" class="category-card">
-
-<div class="category-icon">💰</div>
-
-<h3>Finance</h3>
-
-<p>Currency, profit, budgeting, and investment tools.</p>
-
-</a>
-
-<a href="#" class="category-card">
-
-<div class="category-icon">📦</div>
-
-<h3>Shipping</h3>
-
-<p>Courier, volumetric weight, and logistics utilities.</p>
-
-</a>
-
-<a href="#" class="category-card">
-
-<div class="category-icon">💼</div>
-
-<h3>Business</h3>
-
-<p>Operations, HR, CRM, inventory, and admin tools.</p>
-
-</a>
-
-<a href="#" class="category-card">
-
-<div class="category-icon">🤖</div>
-
-<h3>AI Tools</h3>
-
-<p>Prompt builders, Apps Script, formulas, and automation.</p>
-
-</a>
-
-</div>
+</p>
 
 </div>
 
 </section>
 
-<section class="featured-tools">
+<section class="container" id="tools">
 
-<div class="container">
+<h2>
 
-<h2 class="section-title">
-
-Featured Tools
+Featured Tool
 
 </h2>
 
-<div class="tool-grid">
+<div class="card">
 
-<a href="tools/percentage-calculator/" class="tool-card">
+<h3>
 
-<h3>📊 Percentage Calculator</h3>
+Profit Margin Calculator
 
-<p>
-
-Calculate percentages, increases, decreases, discounts, and more.
-
-</p>
-
-<span>Coming Soon →</span>
-
-</a>
-
-<a href="tools/age-calculator/" class="tool-card">
-
-<h3>🎂 Age Calculator</h3>
+</h3>
 
 <p>
 
-Calculate exact age in years, months, days, and upcoming birthdays.
+Calculate profit, profit margin, markup, and ROI instantly.
 
 </p>
 
-<span>Coming Soon →</span>
+<div class="buttons">
 
-</a>
+<a class="btn-primary"
 
-<a href="tools/qr-generator/" class="tool-card">
+href="tools/profit-margin-calculator/">
 
-<h3>🔳 QR Code Generator</h3>
-
-<p>
-
-Generate QR Codes for websites, Wi-Fi, contacts, text, and more.
-
-</p>
-
-<span>Coming Soon →</span>
-
-</a>
-
-<a href="tools/invoice-generator/" class="tool-card">
-
-<h3>🧾 Invoice Generator</h3>
-
-<p>
-
-Create professional invoices that are ready to print or download.
-
-</p>
-
-<span>Coming Soon →</span>
+Open Tool
 
 </a>
 
@@ -235,123 +170,41 @@ Create professional invoices that are ready to print or download.
 
 </section>
 
-<section class="why">
+<section class="container" id="about">
 
-<div class="container">
+<h2>
 
-<h2 class="section-title">
-
-Why Choose HaeyaGo?
+About HaeyaGo
 
 </h2>
 
-<div class="why-grid">
-
-<div class="why-card">
-
-<h3>⚡ Fast</h3>
+<div class="card">
 
 <p>
 
-No sign-up required. Open a tool and get your work done in seconds.
+HaeyaGo is a growing collection of modern business and productivity tools built to help people work faster, make better decisions, and simplify everyday operations.
 
 </p>
-
-</div>
-
-<div class="why-card">
-
-<h3>📱 Mobile First</h3>
-
-<p>
-
-Designed to work beautifully on phones, tablets, and desktops.
-
-</p>
-
-</div>
-
-<div class="why-card">
-
-<h3>💼 Built for Professionals</h3>
-
-<p>
-
-Created specifically for freelancers, VAs, businesses, logistics teams, and office professionals.
-
-</p>
-
-</div>
-
-<div class="why-card">
-
-<h3>🆓 Free to Use</h3>
-
-<p>
-
-Most tools are completely free, with optional premium templates and advanced features.
-
-</p>
-
-</div>
-
-</div>
 
 </div>
 
 </section>
 
-<section class="stats">
-
-<div class="container">
-
-<div class="stats-grid">
-
-<div>
-
-<h2>100+</h2>
-
-<p>Planned Tools</p>
-
-</div>
-
-<div>
-
-<h2>6</h2>
-
-<p>Main Categories</p>
-
-</div>
-
-<div>
-
-<h2>∞</h2>
-
-<p>Productivity</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+</main>
 
 <footer>
 
 <div class="container">
 
-<p><strong>HaeyaGo</strong></p>
-
 <p>
 
-Free Business Tools That Help You Get Things Done.
+© 2026 HaeyaGo
 
 </p>
 
 <p>
 
-© 2026 HaeyaGo. All rights reserved.
+Built with ❤️ for entrepreneurs, freelancers, and online sellers.
 
 </p>
 
