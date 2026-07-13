@@ -894,3 +894,27 @@ font-size:14px;
 color:var(--small);
 
 }
+
+.related-tools{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:15px;
+}
+
+.related-tools a{
+text-decoration:none;
+padding:10px 14px;
+border-radius:10px;
+background:#f5f9ff;
+border:1px solid #c7eafb;
+color:#1d75bd;
+font-weight:600;
+transition:.2s;
+}
+
+.related-tools a:hover{
+background:#27a9e1;
+color:#fff;
+border-color:#27a9e1;
+}
