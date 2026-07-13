@@ -14,8 +14,14 @@ url:"tools/markup/index.html"
 
 {
 name:"ROI Calculator",
-description:"Coming Soon",
-url:"#"
+description:"Calculate Return on Investment (ROI).",
+url:"tools/roi/index.html"
+},
+
+{
+name:"Selling Price Calculator",
+description:"Calculate selling price using markup percentage.",
+url:"tools/selling-price/index.html"
 },
 
 {
