@@ -8,8 +8,8 @@ url:"tools/profit-margin/index.html"
 
 {
 name:"Markup Calculator",
-description:"Coming Soon",
-url:"#"
+description:"Calculate markup percentage and profit.",
+url:"tools/markup/index.html"
 },
 
 {
