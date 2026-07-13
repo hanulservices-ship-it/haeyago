@@ -834,3 +834,63 @@ font-size:15px;
 }
 
 }
+
+/* Search */
+
+.search-results{
+
+display:none;
+
+margin-top:15px;
+
+background:#fff;
+
+border:1px solid var(--divider);
+
+border-radius:12px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+.search-item{
+
+display:block;
+
+padding:15px 18px;
+
+border-bottom:1px solid var(--divider);
+
+transition:.2s;
+
+}
+
+.search-item:last-child{
+
+border-bottom:none;
+
+}
+
+.search-item:hover{
+
+background:#f8fcff;
+
+}
+
+.search-item h4{
+
+color:var(--secondary);
+
+margin-bottom:4px;
+
+}
+
+.search-item p{
+
+font-size:14px;
+
+color:var(--small);
+
+}

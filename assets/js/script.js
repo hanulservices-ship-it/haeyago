@@ -1,88 +1,96 @@
-// ===================================
-// HaeyaGo Global Script v1.0
-// ===================================
+const tools = [
 
-document.addEventListener("DOMContentLoaded", () => {
+{
+name:"Profit Margin Calculator",
+description:"Calculate profit, markup and margin.",
+url:"tools/profit-margin-calculator/index.html"
+},
 
-    console.log("HaeyaGo Loaded");
+{
+name:"Markup Calculator",
+description:"Coming Soon",
+url:"#"
+},
 
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+{
+name:"ROI Calculator",
+description:"Coming Soon",
+url:"#"
+},
 
-        link.addEventListener("click", function(e){
+{
+name:"Shipping Calculator",
+description:"Coming Soon",
+url:"#"
+},
 
-            const target = document.querySelector(this.getAttribute("href"));
+{
+name:"KRW to PHP Calculator",
+description:"Coming Soon",
+url:"#"
+}
 
-            if(target){
+];
 
-                e.preventDefault();
+const search=document.getElementById("toolSearch");
 
-                target.scrollIntoView({
+const results=document.getElementById("searchResults");
 
-                    behavior:"smooth"
+if(search){
 
-                });
+search.addEventListener("input",()=>{
 
-            }
+const keyword=search.value.trim().toLowerCase();
 
-        });
+results.innerHTML="";
 
-    });
+if(keyword===""){
+
+results.style.display="none";
+
+return;
+
+}
+
+const filtered=tools.filter(tool=>
+
+tool.name.toLowerCase().includes(keyword)
+
+);
+
+if(filtered.length===0){
+
+results.innerHTML=`
+<div class="search-item">
+<h4>No tools found</h4>
+<p>Try another keyword.</p>
+</div>
+`;
+
+results.style.display="block";
+
+return;
+
+}
+
+filtered.forEach(tool=>{
+
+results.innerHTML+=`
+
+<a class="search-item" href="${tool.url}">
+
+<h4>${tool.name}</h4>
+
+<p>${tool.description}</p>
+
+</a>
+
+`;
 
 });
 
-// ===================================
-// Utility Functions
-// ===================================
+results.style.display="block";
 
-function formatNumber(value, decimals = 2){
-
-    return Number(value).toLocaleString(undefined,{
-
-        minimumFractionDigits:decimals,
-
-        maximumFractionDigits:decimals
-
-    });
-
-}
-
-function copyText(text){
-
-    navigator.clipboard.writeText(text)
-    .then(()=>{
-
-        alert("Copied to clipboard!");
-
-    })
-    .catch(()=>{
-
-        alert("Unable to copy.");
-
-    });
-
-}
-
-async function shareResult(title,text){
-
-    if(navigator.share){
-
-        try{
-
-            await navigator.share({
-
-                title:title,
-
-                text:text
-
-            });
-
-        }catch(err){}
-
-    }else{
-
-        alert("Sharing is not supported on this device.");
-
-    }
+});
 
 }
