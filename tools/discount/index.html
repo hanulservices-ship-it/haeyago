@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Discount Calculator | HaeyaGo</title>
+
+<meta name="description" content="Free Discount Calculator by HaeyaGo. Calculate discount amount, final price, and money saved instantly.">
+
+<meta name="theme-color" content="#27A9E1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<a href="../../index.html" class="logo">
+
+Haeya<span>Go</span>
+
+</a>
+
+<nav>
+
+<a href="../../index.html">Home</a>
+
+<a href="../../tools/index.html">Tools</a>
+
+<a href="../../index.html#categories">Categories</a>
+
+<a href="../../pages/about.html">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<p class="breadcrumb">
+
+<a href="../../index.html">Home</a>
+
+>
+
+<a href="../../index.html#categories">Finance</a>
+
+>
+
+Discount Calculator
+
+</p>
+
+<section class="card">
+
+<h1>
+
+Discount Calculator
+
+</h1>
+
+<p>
+
+Calculate the discount amount, final price, and total savings in seconds.
+
+</p>
+
+<hr>
+
+<div class="tool-container">
+
+<div class="form-group">
+
+<label>Original Price</label>
+
+<div class="input-group">
+
+<select id="currency">
+
+<option value="₱">Philippine Peso (₱)</option>
+
+<option value="$">US Dollar ($)</option>
+
+<option value="₩">Korean Won (₩)</option>
+
+<option value="฿">Thai Baht (฿)</option>
+
+<option value="¥">Japanese Yen (¥)</option>
+
+<option value="€">Euro (€)</option>
+
+<option value="£">British Pound (£)</option>
+
+</select>
+
+<input
+type="number"
+inputmode="decimal"
+step="0.01"
+min="0"
+id="originalPrice"
+placeholder="0.00">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Discount (%)</label>
+
+<input
+type="number"
+inputmode="decimal"
+step="0.01"
+min="0"
+max="100"
+id="discount"
+placeholder="0">
+
+</div>
+
+<div class="buttons">
+
+<button class="btn-primary" id="calculateBtn">
+
+Calculate
+
+</button>
+
+<button class="btn-secondary" id="resetBtn">
+
+Reset
+
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+Enter the Original Price and Discount Percentage, then tap Calculate.
+
+</div>
+
+<div
+class="buttons"
+id="resultButtons"
+style="display:none;">
+
+<button class="btn-secondary" id="copyBtn">
+
+Copy Result
+
+</button>
+
+<button class="btn-secondary" id="shareBtn">
+
+Share
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>How to Use</h2>
+
+<h3>Step 1: Enter the Original Price</h3>
+
+<p>
+
+Enter the item's price before any discounts are applied.
+
+</p>
+
+<h3>Step 2: Enter the Discount Percentage</h3>
+
+<p>
+
+Input the discount percentage offered by the store or seller.
+
+</p>
+
+<h3>Step 3: Tap Calculate</h3>
+
+<p>
+
+The calculator will instantly show your discount amount, final price, and total money saved.
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+If the Original Price is <strong>₱2,000</strong> and the Discount is <strong>25%</strong>, you save <strong>₱500</strong> and pay only <strong>₱1,500</strong>.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is a discount?</h3>
+
+<p>
+
+A discount is a reduction from the original selling price of a product or service.
+
+</p>
+
+<h3>How is the discount amount calculated?</h3>
+
+<p>
+
+Multiply the original price by the discount percentage and divide by 100.
+
+</p>
+
+<h3>Can I use decimal percentages?</h3>
+
+<p>
+
+Yes. Values like 12.5% or 7.75% are supported.
+
+</p>
+
+<h3>Does this work for any currency?</h3>
+
+<p>
+
+Yes. The calculator works for any currency. The currency selector only changes the displayed symbol.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+Formula
+
+</h2>
+
+<h3>Discount Amount</h3>
+
+<p>
+
+Discount = Original Price × (Discount % ÷ 100)
+
+</p>
+
+<h3>Final Price</h3>
+
+<p>
+
+Final Price = Original Price − Discount
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+Original Price = ₱2,000
+
+<br>
+
+Discount = 25%
+
+<br><br>
+
+Discount Amount = ₱500
+
+<br>
+
+Final Price = ₱1,500
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Related Tools</h2>
+
+<div class="related-tools">
+
+<a href="../profit-margin/index.html">
+
+Profit Margin Calculator
+
+</a>
+
+<a href="../markup/index.html">
+
+Markup Calculator
+
+</a>
+
+<a href="../selling-price/index.html">
+
+Selling Price Calculator
+
+</a>
+
+<a href="../break-even/index.html">
+
+Break-even Calculator
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<p><strong>HaeyaGo</strong></p>
+
+<p>
+
+Smart Business Tools for Online Sellers & Small Businesses.
+
+</p>
+
+<p>
+
+© 2026 HaeyaGo
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
