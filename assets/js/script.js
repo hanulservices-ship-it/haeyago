@@ -25,6 +25,18 @@ url:"tools/selling-price/index.html"
 },
 
 {
+name:"Break-even Calculator",
+description:"Calculate the units needed to recover your costs.",
+url:"tools/break-even/index.html"
+},
+
+{
+name:"Discount Calculator",
+description:"Calculate discounts, savings and final price.",
+url:"tools/discount/index.html"
+},
+
+{
 name:"Shipping Calculator",
 description:"Coming Soon",
 url:"#"
