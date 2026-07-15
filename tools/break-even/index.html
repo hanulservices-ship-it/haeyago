@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Break-even Calculator | HaeyaGo</title>
+
+<meta name="description" content="Free Break-even Calculator by HaeyaGo. Calculate the number of units you need to sell to recover your costs.">
+
+<meta name="theme-color" content="#27A9E1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<a href="../../index.html" class="logo">
+
+Haeya<span>Go</span>
+
+</a>
+
+<nav>
+
+<a href="../../index.html">Home</a>
+
+<a href="../../tools/index.html">Tools</a>
+
+<a href="../../index.html#categories">Categories</a>
+
+<a href="../../pages/about.html">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<p class="breadcrumb">
+
+<a href="../../index.html">Home</a>
+
+>
+
+<a href="../../index.html#categories">Finance</a>
+
+>
+
+Break-even Calculator
+
+</p>
+
+<section class="card">
+
+<h1>
+
+Break-even Calculator
+
+</h1>
+
+<p>
+
+Calculate how many units you need to sell before your business starts making a profit.
+
+</p>
+
+<hr>
+
+<div class="tool-container">
+
+<div class="form-group">
+
+<label>Fixed Costs</label>
+
+<div class="input-group">
+
+<select id="currency">
+
+<option value="₱">Philippine Peso (₱)</option>
+
+<option value="$">US Dollar ($)</option>
+
+<option value="₩">Korean Won (₩)</option>
+
+<option value="฿">Thai Baht (฿)</option>
+
+<option value="¥">Japanese Yen (¥)</option>
+
+<option value="€">Euro (€)</option>
+
+<option value="£">British Pound (£)</option>
+
+</select>
+
+<input
+type="number"
+id="fixedCost"
+placeholder="0.00">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label>Selling Price per Unit</label>
+
+<input
+type="number"
+id="sellingPrice"
+placeholder="0.00">
+
+</div>
+
+<div class="form-group">
+
+<label>Variable Cost per Unit</label>
+
+<input
+type="number"
+id="variableCost"
+placeholder="0.00">
+
+</div>
+
+<div class="buttons">
+
+<button class="btn-primary" id="calculateBtn">
+
+Calculate
+
+</button>
+
+<button class="btn-secondary" id="resetBtn">
+
+Reset
+
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+Enter your costs, then tap Calculate.
+
+</div>
+
+<div
+class="buttons"
+id="resultButtons"
+style="display:none;">
+
+<button class="btn-secondary" id="copyBtn">
+
+Copy Result
+
+</button>
+
+<button class="btn-secondary" id="shareBtn">
+
+Share
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>How to Use</h2>
+
+<h3>Step 1: Enter Fixed Costs</h3>
+
+<p>
+
+Enter expenses that remain the same regardless of sales, such as rent, salaries, utilities, subscriptions, and insurance.
+
+</p>
+
+<h3>Step 2: Enter Selling Price per Unit</h3>
+
+<p>
+
+Enter the amount you charge customers for one product or service.
+
+</p>
+
+<h3>Step 3: Enter Variable Cost per Unit</h3>
+
+<p>
+
+Enter the cost required to produce or deliver one unit, such as materials, packaging, or commissions.
+
+</p>
+
+<h3>Step 4: Tap Calculate</h3>
+
+<p>
+
+The calculator will show the minimum number of units you need to sell to recover all your costs.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is a break-even point?</h3>
+
+<p>
+
+The break-even point is the number of units you must sell before your total revenue equals your total costs.
+
+</p>
+
+<h3>Why is it important?</h3>
+
+<p>
+
+Knowing your break-even point helps you set realistic sales goals and pricing strategies.
+
+</p>
+
+<h3>Can I use this calculator for services?</h3>
+
+<p>
+
+Yes. It works for products, services, consulting, freelance work, and subscriptions.
+
+</p>
+
+<h3>What happens after the break-even point?</h3>
+
+<p>
+
+Every additional sale beyond the break-even point contributes to profit, assuming your costs remain the same.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+Formula
+
+</h2>
+
+<h3>Break-even Units</h3>
+
+<p>
+
+Break-even = Fixed Costs ÷ (Selling Price − Variable Cost)
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+Fixed Costs = ₱10,000
+
+<br>
+
+Selling Price = ₱500
+
+<br>
+
+Variable Cost = ₱300
+
+<br><br>
+
+Break-even Units = 50
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Related Tools</h2>
+
+<div class="related-tools">
+
+<a href="../profit-margin/index.html">
+Profit Margin Calculator
+</a>
+
+<a href="../markup/index.html">
+Markup Calculator
+</a>
+
+<a href="../roi/index.html">
+ROI Calculator
+</a>
+
+<a href="../selling-price/index.html">
+Selling Price Calculator
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<p><strong>HaeyaGo</strong></p>
+
+<p>
+
+Smart Business Tools for Online Sellers & Small Businesses.
+
+</p>
+
+<p>
+
+© 2026 HaeyaGo
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
