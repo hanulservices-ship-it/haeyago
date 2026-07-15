@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Commission Calculator | HaeyaGo</title>
+
+<meta name="description" content="Free Commission Calculator by HaeyaGo. Calculate commission, net sales, and earnings instantly.">
+
+<meta name="theme-color" content="#27A9E1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<a href="../../index.html" class="logo">
+
+Haeya<span>Go</span>
+
+</a>
+
+<nav>
+
+<a href="../../index.html">Home</a>
+
+<a href="../../tools/index.html">Tools</a>
+
+<a href="../../index.html#categories">Categories</a>
+
+<a href="../../pages/about.html">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<p class="breadcrumb">
+
+<a href="../../index.html">Home</a>
+
+>
+
+<a href="../../index.html#categories">Finance</a>
+
+>
+
+Commission Calculator
+
+</p>
+
+<section class="card">
+
+<h1>
+
+Commission Calculator
+
+</h1>
+
+<p>
+
+Calculate your commission, net sales, and earnings based on your sales amount and commission rate.
+
+</p>
+
+<hr>
+
+<div class="tool-container">
+
+<div class="form-group">
+
+<label>Currency</label>
+
+<select id="currency">
+
+<option value="₱">Philippine Peso (₱)</option>
+
+<option value="$">US Dollar ($)</option>
+
+<option value="₩">Korean Won (₩)</option>
+
+<option value="฿">Thai Baht (฿)</option>
+
+<option value="¥">Japanese Yen (¥)</option>
+
+<option value="€">Euro (€)</option>
+
+<option value="£">British Pound (£)</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Sales Amount</label>
+
+<input
+type="number"
+id="sales"
+inputmode="decimal"
+step="0.01"
+min="0"
+placeholder="0.00">
+
+</div>
+
+<div class="form-group">
+
+<label>Commission Rate (%)</label>
+
+<input
+type="number"
+id="rate"
+inputmode="decimal"
+step="0.01"
+min="0"
+placeholder="10">
+
+</div>
+
+<div class="buttons">
+
+<button class="btn-primary" id="calculateBtn">
+
+Calculate
+
+</button>
+
+<button class="btn-secondary" id="resetBtn">
+
+Reset
+
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+Enter your sales amount and commission rate, then tap Calculate.
+
+</div>
+
+<div
+class="buttons"
+id="resultButtons"
+style="display:none;">
+
+<button class="btn-secondary" id="copyBtn">
+
+Copy Result
+
+</button>
+
+<button class="btn-secondary" id="shareBtn">
+
+Share
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>How to Use</h2>
+
+<h3>Step 1: Enter Sales Amount</h3>
+
+<p>
+
+Enter the total value of the sale or transaction.
+
+</p>
+
+<h3>Step 2: Enter Commission Rate</h3>
+
+<p>
+
+Enter the agreed commission percentage.
+
+</p>
+
+<h3>Step 3: Tap Calculate</h3>
+
+<p>
+
+The calculator will display the commission amount and the remaining sales amount after commission.
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+If your sales amount is <strong>₱10,000</strong> and your commission rate is <strong>10%</strong>, your commission is <strong>₱1,000</strong> and the remaining sales amount is <strong>₱9,000</strong>.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is a commission?</h3>
+
+<p>
+
+A commission is a payment earned based on a percentage of a sale or transaction.
+
+</p>
+
+<h3>Who can use this calculator?</h3>
+
+<p>
+
+Sales representatives, freelancers, affiliate marketers, insurance agents, real estate agents, and business owners.
+
+</p>
+
+<h3>Can I use decimal percentages?</h3>
+
+<p>
+
+Yes. You can enter commission rates such as 7.5% or 12.25%.
+
+</p>
+
+<h3>Does it support different currencies?</h3>
+
+<p>
+
+Yes. The currency selector only changes the displayed symbol.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Formula</h2>
+
+<h3>Commission</h3>
+
+<p>
+
+Commission = Sales × (Commission Rate ÷ 100)
+
+</p>
+
+<h3>Net Sales</h3>
+
+<p>
+
+Net Sales = Sales − Commission
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+Sales = ₱10,000
+
+<br>
+
+Commission Rate = 10%
+
+<br><br>
+
+Commission = ₱1,000
+
+<br>
+
+Net Sales = ₱9,000
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Related Tools</h2>
+
+<div class="related-tools">
+
+<a href="../profit-margin/index.html">Profit Margin Calculator</a>
+
+<a href="../vat/index.html">VAT Calculator</a>
+
+<a href="../markup/index.html">Markup Calculator</a>
+
+<a href="../selling-price/index.html">Selling Price Calculator</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<p><strong>HaeyaGo</strong></p>
+
+<p>
+
+Smart Business Tools for Online Sellers & Small Businesses.
+
+</p>
+
+<p>
+
+© 2026 HaeyaGo
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
