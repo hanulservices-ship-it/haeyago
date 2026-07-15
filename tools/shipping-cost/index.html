@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shipping Cost Calculator | HaeyaGo</title>
+
+<meta name="description" content="Free Shipping Cost Calculator by HaeyaGo. Estimate shipping costs based on package weight and shipping rate.">
+
+<meta name="theme-color" content="#27A9E1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<a href="../../index.html" class="logo">
+
+Haeya<span>Go</span>
+
+</a>
+
+<nav>
+
+<a href="../../index.html">Home</a>
+
+<a href="../../tools/index.html">Tools</a>
+
+<a href="../../index.html#categories">Categories</a>
+
+<a href="../../pages/about.html">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<p class="breadcrumb">
+
+<a href="../../index.html">Home</a>
+
+>
+
+<a href="../../index.html#categories">Shipping</a>
+
+>
+
+Shipping Cost Calculator
+
+</p>
+
+<section class="card">
+
+<h1>
+
+Shipping Cost Calculator
+
+</h1>
+
+<p>
+
+Estimate shipping costs using your package weight and shipping rate.
+
+</p>
+
+<hr>
+
+<div class="tool-container">
+
+<div class="form-group">
+
+<label>Currency</label>
+
+<select id="currency">
+
+<option value="₱">Philippine Peso (₱)</option>
+
+<option value="$">US Dollar ($)</option>
+
+<option value="₩">Korean Won (₩)</option>
+
+<option value="฿">Thai Baht (฿)</option>
+
+<option value="¥">Japanese Yen (¥)</option>
+
+<option value="€">Euro (€)</option>
+
+<option value="£">British Pound (£)</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Package Weight (kg)</label>
+
+<input
+type="number"
+inputmode="decimal"
+step="0.01"
+min="0"
+id="weight"
+placeholder="0.00">
+
+</div>
+
+<div class="form-group">
+
+<label>Shipping Rate per kg</label>
+
+<input
+type="number"
+inputmode="decimal"
+step="0.01"
+min="0"
+id="rate"
+placeholder="0.00">
+
+</div>
+
+<div class="buttons">
+
+<button class="btn-primary" id="calculateBtn">
+
+Calculate
+
+</button>
+
+<button class="btn-secondary" id="resetBtn">
+
+Reset
+
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+Enter the package weight and shipping rate, then tap Calculate.
+
+</div>
+
+<div
+class="buttons"
+id="resultButtons"
+style="display:none;">
+
+<button class="btn-secondary" id="copyBtn">
+
+Copy Result
+
+</button>
+
+<button class="btn-secondary" id="shareBtn">
+
+Share
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>How to Use</h2>
+
+<h3>Step 1: Select Your Currency</h3>
+
+<p>
+
+Choose the currency you want to display for the shipping cost.
+
+</p>
+
+<h3>Step 2: Enter Package Weight</h3>
+
+<p>
+
+Enter the total weight of your package in kilograms.
+
+</p>
+
+<h3>Step 3: Enter Shipping Rate per kg</h3>
+
+<p>
+
+Enter the shipping cost charged for every kilogram.
+
+</p>
+
+<h3>Step 4: Tap Calculate</h3>
+
+<p>
+
+The calculator will estimate the total shipping cost instantly.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>How is shipping cost calculated?</h3>
+
+<p>
+
+The calculator multiplies the package weight by the shipping rate per kilogram.
+
+</p>
+
+<h3>Can I use decimal weights?</h3>
+
+<p>
+
+Yes. You can enter values such as 0.25 kg, 1.5 kg, or 2.75 kg.
+
+</p>
+
+<h3>Does this include volumetric weight?</h3>
+
+<p>
+
+No. This version only calculates based on actual weight. Volumetric weight will be added in a future update.
+
+</p>
+
+<h3>Can I use any currency?</h3>
+
+<p>
+
+Yes. The currency selector changes the displayed symbol only.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Formula</h2>
+
+<h3>Total Shipping Cost</h3>
+
+<p>
+
+Shipping Cost = Package Weight × Shipping Rate per kg
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+Weight = 3 kg
+
+<br>
+
+Rate = ₱180/kg
+
+<br><br>
+
+Shipping Cost = ₱540
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Related Tools</h2>
+
+<div class="related-tools">
+
+<a href="../profit-margin/index.html">Profit Margin Calculator</a>
+
+<a href="../selling-price/index.html">Selling Price Calculator</a>
+
+<a href="../break-even/index.html">Break-even Calculator</a>
+
+<a href="../discount/index.html">Discount Calculator</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<p><strong>HaeyaGo</strong></p>
+
+<p>
+
+Smart Business Tools for Online Sellers & Small Businesses.
+
+</p>
+
+<p>
+
+© 2026 HaeyaGo
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
