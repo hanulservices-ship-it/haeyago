@@ -7,9 +7,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Markup Calculator | HaeyaGo</title>
+<title>Profit Margin Calculator | HaeyaGo</title>
 
-<meta name="description" content="Free Markup Calculator by HaeyaGo. Calculate markup percentage and profit instantly.">
+<meta name="description" content="Free Profit Margin Calculator by HaeyaGo. Calculate profit, profit margin, and markup instantly.">
 
 <meta name="theme-color" content="#27A9E1">
 
@@ -33,21 +33,17 @@
 
 <div class="container navbar">
 
-<a href="../../index.html" class="logo">
-
+<a href="index.html" class="logo">
 Haeya<span>Go</span>
-
 </a>
 
 <nav>
 
-<a href="../../index.html">Home</a>
+<a href="tools/index.html">Tools</a>
 
-<a href="../../tools/index.html">Tools</a>
+<a href="#categories">Categories</a>
 
-<a href="../../index.html#categories">Categories</a>
-
-<a href="../../pages/about.html">About</a>
+<a href="pages/about.html">About</a>
 
 </nav>
 
@@ -67,7 +63,7 @@ Haeya<span>Go</span>
 
 >
 
-Markup Calculator
+Profit Margin Calculator
 
 </p>
 
@@ -75,13 +71,13 @@ Markup Calculator
 
 <h1>
 
-Markup Calculator
+Profit Margin Calculator
 
 </h1>
 
 <p>
 
-Calculate your markup percentage and profit using your cost price and selling price.
+Calculate your profit, profit margin, and markup instantly using your cost price and selling price.
 
 </p>
 
@@ -98,11 +94,17 @@ Calculate your markup percentage and profit using your cost price and selling pr
 <select id="currency">
 
 <option value="₱">Philippine Peso (₱)</option>
+
 <option value="$">US Dollar ($)</option>
+
 <option value="₩">Korean Won (₩)</option>
+
 <option value="฿">Thai Baht (฿)</option>
+
 <option value="¥">Japanese Yen (¥)</option>
+
 <option value="€">Euro (€)</option>
+
 <option value="£">British Pound (£)</option>
 
 </select>
@@ -185,25 +187,33 @@ Share
 <h3>Step 1: Enter Your Cost Price</h3>
 
 <p>
-Enter the amount you paid to purchase or produce your product.
+
+Enter the total cost of your product or service. This includes manufacturing costs, purchase price, shipping, or any other expenses directly related to the item.
+
 </p>
 
 <h3>Step 2: Enter Your Selling Price</h3>
 
 <p>
-Enter the price you are charging your customer.
+
+Type the price you plan to charge your customer. Make sure the selling price is higher than your cost price if you want to earn a profit.
+
 </p>
 
 <h3>Step 3: Tap Calculate</h3>
 
 <p>
-The calculator will instantly show your Profit and Markup Percentage.
+
+The calculator will instantly display your Profit, Profit Margin (%), and Markup (%) based on the values you entered.
+
 </p>
 
 <h3>Example</h3>
 
 <p>
-If your Cost Price is <strong>₱100</strong> and your Selling Price is <strong>₱140</strong>, your Profit is <strong>₱40</strong> and your Markup is <strong>40%</strong>.
+
+If your Cost Price is <strong>₱100</strong> and your Selling Price is <strong>₱150</strong>, your Profit is <strong>₱50</strong>, your Profit Margin is <strong>33.33%</strong>, and your Markup is <strong>50.00%</strong>.
+
 </p>
 
 </section>
@@ -212,28 +222,28 @@ If your Cost Price is <strong>₱100</strong> and your Selling Price is <strong>
 
 <h2>Frequently Asked Questions</h2>
 
-<h3>What is markup?</h3>
+<h3>What is profit margin?</h3>
 
 <p>
-Markup is the percentage added to your cost price to determine your selling price.
+Profit margin is the percentage of your selling price that remains as profit after deducting the cost. It helps measure how profitable each sale is.
 </p>
 
-<h3>Why is markup important?</h3>
+<h3>What is the difference between profit margin and markup?</h3>
 
 <p>
-Markup helps ensure you earn enough profit to cover business expenses and generate income.
+Profit margin is based on the selling price, while markup is based on the cost price. They are related but are not the same percentage.
 </p>
 
-<h3>Can markup be negative?</h3>
+<h3>Can I use this calculator for services?</h3>
 
 <p>
-Yes. If your selling price is lower than your cost price, the markup becomes negative, meaning you are selling at a loss.
+Yes. You can use it for physical products, digital products, freelance work, consulting, and other services.
 </p>
 
-<h3>Is markup the same as profit margin?</h3>
+<h3>Does this calculator support different currencies?</h3>
 
 <p>
-No. Markup is calculated from the cost price, while profit margin is calculated from the selling price.
+Yes. The currency selector changes the displayed currency symbol only. The calculation works the same regardless of the currency you choose.
 </p>
 
 </section>
@@ -254,6 +264,14 @@ Profit = Selling Price − Cost Price
 
 </p>
 
+<h3>Profit Margin (%)</h3>
+
+<p>
+
+Profit Margin = (Profit ÷ Selling Price) × 100
+
+</p>
+
 <h3>Markup (%)</h3>
 
 <p>
@@ -270,15 +288,19 @@ Cost Price = ₱100
 
 <br>
 
-Selling Price = ₱140
+Selling Price = ₱150
 
 <br><br>
 
-Profit = ₱40
+Profit = ₱50
 
 <br>
 
-Markup = 40.00%
+Profit Margin = 33.33%
+
+<br>
+
+Markup = 50.00%
 
 </p>
 
@@ -314,9 +336,15 @@ Selling Price Calculator
 
 <footer>
 
-<div class="container">
+<div class="container footer">
 
-<p><strong>HaeyaGo</strong></p>
+<div>
+
+<h3 class="logo">
+
+Haeya<span>Go</span>
+
+</h3>
 
 <p>
 
@@ -324,9 +352,61 @@ Smart Business Tools for Online Sellers & Small Businesses.
 
 </p>
 
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<ul class="footer-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="tools/index.html">All Tools</a></li>
+
+<li><a href="#featured">Featured Tools</a></li>
+
+<li><a href="#categories">Categories</a></li>
+
+<li><a href="pages/about.html">About</a></li>
+
+<li><a href="pages/contact.html">Contact</a></li>
+
+<li><a href="pages/privacy.html">Privacy Policy</a></li>
+
+<li><a href="pages/terms.html">Terms of Service</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Categories</h4>
+
+<ul class="footer-links">
+
+<li>Finance & Pricing</li>
+
+<li>Ecommerce</li>
+
+<li>Shipping & Logistics</li>
+
+<li>Cross-Border</li>
+
+<li>Business Documents</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="container copyright">
+
 <p>
 
-© 2026 HaeyaGo
+© 2026 HaeyaGo. All rights reserved.
 
 </p>
 

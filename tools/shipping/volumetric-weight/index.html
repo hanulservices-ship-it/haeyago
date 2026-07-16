@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Volumetric Weight Calculator | HaeyaGo</title>
+
+<meta name="description" content="Free Volumetric Weight Calculator by HaeyaGo. Calculate dimensional weight, actual weight, and chargeable weight for air cargo, courier, and shipping services.">
+
+<meta name="keywords" content="volumetric weight calculator, dimensional weight calculator, shipping calculator, air cargo calculator, courier calculator">
+
+<meta name="theme-color" content="#27A9E1">
+
+<meta name="author" content="HaeyaGo">
+
+<link rel="canonical" href="https://haeyago.com/tools/shipping/volumetric-weight/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="manifest" href="../../manifest.webmanifest">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<a href="index.html" class="logo">
+Haeya<span>Go</span>
+</a>
+
+<nav>
+
+<a href="tools/index.html">Tools</a>
+
+<a href="#categories">Categories</a>
+
+<a href="pages/about.html">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<p class="breadcrumb">
+
+<a href="../../index.html">Home</a>
+
+>
+
+<a href="../index.html">Tools</a>
+
+>
+
+<a href="../../index.html#categories">Shipping</a>
+
+>
+
+Volumetric Weight Calculator
+
+</p>
+
+<section class="card hero-card">
+
+<h1>📦 Volumetric Weight Calculator</h1>
+
+<p>
+
+Calculate the volumetric (dimensional) weight, actual weight, and chargeable weight for parcels, courier shipments, air cargo, and freight.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Calculator</h2>
+
+<div class="tool-container">
+
+<div class="form-group">
+
+<label for="length">Length</label>
+
+<input
+type="number"
+id="length"
+placeholder="Enter length">
+
+</div>
+
+<div class="form-group">
+
+<label for="width">Width</label>
+
+<input
+type="number"
+id="width"
+placeholder="Enter width">
+
+</div>
+
+<div class="form-group">
+
+<label for="height">Height</label>
+
+<input
+type="number"
+id="height"
+placeholder="Enter height">
+
+</div>
+
+<div class="form-group">
+
+<label for="dimensionUnit">Dimension Unit</label>
+
+<select id="dimensionUnit">
+
+<option value="cm">Centimeters (cm)</option>
+
+<option value="in">Inches (in)</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label for="actualWeight">Actual Weight</label>
+
+<input
+type="number"
+id="actualWeight"
+placeholder="Enter weight">
+
+</div>
+
+<div class="form-group">
+
+<label for="weightUnit">Weight Unit</label>
+
+<select id="weightUnit">
+
+<option value="kg">Kilograms (kg)</option>
+
+<option value="lb">Pounds (lb)</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label for="divisor">Shipping Divisor</label>
+
+<select id="divisor">
+
+<option value="5000">Air Cargo (5000)</option>
+
+<option value="6000">Courier (6000)</option>
+
+<option value="4000">Freight (4000)</option>
+
+<option value="custom">Custom</option>
+
+</select>
+
+</div>
+
+<div class="form-group" id="customDivisorGroup" style="display:none;">
+
+<label for="customDivisor">Custom Divisor</label>
+
+<input
+type="number"
+id="customDivisor"
+placeholder="Enter divisor">
+
+</div>
+
+<div class="buttons">
+
+<button class="btn-primary" id="calculateBtn">
+
+Calculate
+
+</button>
+
+<button class="btn-secondary" id="resetBtn">
+
+Reset
+
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+Enter your package dimensions and weight, then tap Calculate.
+
+</div>
+
+<div
+class="buttons"
+id="resultButtons"
+style="display:none;">
+
+<button class="btn-secondary" id="copyBtn">
+
+Copy Result
+
+</button>
+
+<button class="btn-secondary" id="shareBtn">
+
+Share
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>How to Use</h2>
+
+<h3>Step 1: Enter Your Cost Price</h3>
+
+<p>
+
+Enter the total cost of your product or service. This includes manufacturing costs, purchase price, shipping, or any other expenses directly related to the item.
+
+</p>
+
+<h3>Step 2: Enter Your Selling Price</h3>
+
+<p>
+
+Type the price you plan to charge your customer. Make sure the selling price is higher than your cost price if you want to earn a profit.
+
+</p>
+
+<h3>Step 3: Tap Calculate</h3>
+
+<p>
+
+The calculator will instantly display your Profit, Profit Margin (%), and Markup (%) based on the values you entered.
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+If your Cost Price is <strong>₱100</strong> and your Selling Price is <strong>₱150</strong>, your Profit is <strong>₱50</strong>, your Profit Margin is <strong>33.33%</strong>, and your Markup is <strong>50.00%</strong>.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is profit margin?</h3>
+
+<p>
+Profit margin is the percentage of your selling price that remains as profit after deducting the cost. It helps measure how profitable each sale is.
+</p>
+
+<h3>What is the difference between profit margin and markup?</h3>
+
+<p>
+Profit margin is based on the selling price, while markup is based on the cost price. They are related but are not the same percentage.
+</p>
+
+<h3>Can I use this calculator for services?</h3>
+
+<p>
+Yes. You can use it for physical products, digital products, freelance work, consulting, and other services.
+</p>
+
+<h3>Does this calculator support different currencies?</h3>
+
+<p>
+Yes. The currency selector changes the displayed currency symbol only. The calculation works the same regardless of the currency you choose.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>
+
+Formula
+
+</h2>
+
+<h3>Profit</h3>
+
+<p>
+
+Profit = Selling Price − Cost Price
+
+</p>
+
+<h3>Profit Margin (%)</h3>
+
+<p>
+
+Profit Margin = (Profit ÷ Selling Price) × 100
+
+</p>
+
+<h3>Markup (%)</h3>
+
+<p>
+
+Markup = (Profit ÷ Cost Price) × 100
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+Cost Price = ₱100
+
+<br>
+
+Selling Price = ₱150
+
+<br><br>
+
+Profit = ₱50
+
+<br>
+
+Profit Margin = 33.33%
+
+<br>
+
+Markup = 50.00%
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Related Tools</h2>
+
+<div class="related-tools">
+
+<a href="../../shipping-cost/index.html">
+Shipping Cost Calculator
+</a>
+
+<a href="../../import-cost/index.html">
+Import Cost Calculator
+</a>
+
+<a href="../../currency-converter/index.html">
+Currency Converter
+</a>
+
+<a href="../../marketplace-fee/index.html">
+Marketplace Fee Calculator
+</a>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>💡 Tips</h2>
+
+<ul>
+
+<li>Couriers charge whichever is higher: <strong>Actual Weight</strong> or <strong>Volumetric Weight</strong>.</li>
+
+<li>Using a smaller box can reduce your shipping cost.</li>
+
+<li>Remove unnecessary packaging to lower dimensional weight.</li>
+
+<li>Different shipping companies may use different divisors.</li>
+
+</ul>
+
+</section>
+
+<section class="card">
+
+<h2>How to Use</h2>
+
+<ol>
+
+<li>Enter the package Length, Width, and Height.</li>
+
+<li>Select the dimension unit (cm or inches).</li>
+
+<li>Enter the package's actual weight.</li>
+
+<li>Select the weight unit.</li>
+
+<li>Select the shipping divisor or enter a custom one.</li>
+
+<li>Tap <strong>Calculate</strong>.</li>
+
+<li>The calculator will display the Volumetric Weight, Actual Weight, and Chargeable Weight.</li>
+
+</ol>
+
+</section>
+
+<section class="card">
+
+<h2>Formula</h2>
+
+<p>
+
+<strong>Volumetric Weight</strong>
+
+</p>
+
+<p>
+
+Length × Width × Height ÷ Shipping Divisor
+
+</p>
+
+<p>
+
+<strong>Chargeable Weight</strong>
+
+</p>
+
+<p>
+
+Greater of:
+
+</p>
+
+<ul>
+
+<li>Actual Weight</li>
+
+<li>Volumetric Weight</li>
+
+</ul>
+
+</section>
+
+<section class="card">
+
+<h2>Supported Divisors</h2>
+
+<table class="info-table">
+
+<tr>
+
+<th>Shipping Type</th>
+
+<th>Common Divisor</th>
+
+</tr>
+
+<tr>
+
+<td>Air Cargo</td>
+
+<td>5000</td>
+
+</tr>
+
+<tr>
+
+<td>International Courier</td>
+
+<td>6000</td>
+
+</tr>
+
+<tr>
+
+<td>Freight Forwarder</td>
+
+<td>4000</td>
+
+</tr>
+
+<tr>
+
+<td>Custom</td>
+
+<td>User Defined</td>
+
+</tr>
+
+</table>
+
+</section>
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is volumetric weight?</h3>
+
+<p>
+
+Volumetric weight estimates shipping weight based on package size instead of actual mass.
+
+</p>
+
+<h3>Why is my chargeable weight higher?</h3>
+
+<p>
+
+Shipping companies charge whichever is greater between actual and volumetric weight.
+
+</p>
+
+<h3>Why do different couriers use different divisors?</h3>
+
+<p>
+
+Every courier has its own pricing policy. Some use 4000, 5000, or 6000.
+
+</p>
+
+<h3>Can I use a custom divisor?</h3>
+
+<p>
+
+Yes. Select "Custom" and enter the divisor provided by your courier.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Related Tools</h2>
+
+<div class="related-tools">
+
+<a href="../shipping-cost/index.html">
+
+Shipping Cost Calculator
+
+</a>
+
+<a href="../../import-cost/index.html">
+
+Import Cost Calculator
+
+</a>
+
+<a href="../../currency-converter/index.html">
+
+Currency Converter
+
+</a>
+
+<a href="../../marketplace-fee/index.html">
+
+Marketplace Fee Calculator
+
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container footer">
+
+<div>
+
+<h3 class="logo">
+
+Haeya<span>Go</span>
+
+</h3>
+
+<p>
+
+Smart Business Tools for Online Sellers & Small Businesses.
+
+</p>
+
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<ul class="footer-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="tools/index.html">All Tools</a></li>
+
+<li><a href="#featured">Featured Tools</a></li>
+
+<li><a href="#categories">Categories</a></li>
+
+<li><a href="pages/about.html">About</a></li>
+
+<li><a href="pages/contact.html">Contact</a></li>
+
+<li><a href="pages/privacy.html">Privacy Policy</a></li>
+
+<li><a href="pages/terms.html">Terms of Service</a></li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h4>Categories</h4>
+
+<ul class="footer-links">
+
+<li>Finance & Pricing</li>
+
+<li>Ecommerce</li>
+
+<li>Shipping & Logistics</li>
+
+<li>Cross-Border</li>
+
+<li>Business Documents</li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="container copyright">
+
+<p>
+
+© 2026 HaeyaGo. All rights reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

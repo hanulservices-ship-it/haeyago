@@ -37,9 +37,27 @@ url:"tools/discount/index.html"
 },
 
 {
-name:"Shipping Calculator",
-description:"Coming Soon",
-url:"#"
+name:"Shipping Cost Calculator",
+description:"Estimate shipping costs based on weight.",
+url:"tools/shipping-cost/index.html"
+},
+
+{
+name:"VAT Calculator",
+description:"Calculate VAT amount and total price instantly.",
+url:"tools/vat/index.html"
+},
+
+{
+name:"Commission Calculator",
+description:"Calculate commission amount and net earnings instantly.",
+url:"tools/commission/index.html"
+},
+
+{
+name:"Marketplace Fee Calculator",
+description:"Calculate marketplace fees, profit, and net earnings for online sellers.",
+url:"tools/marketplace-fee/index.html"
 },
 
 {

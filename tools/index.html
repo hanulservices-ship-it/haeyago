@@ -19,6 +19,8 @@
 
 <link rel="stylesheet" href="../assets/css/style.css">
 
+<link rel="manifest" href="../../manifest.webmanifest">
+
 </head>
 
 <body>
@@ -56,14 +58,102 @@ Browse all free business tools available on HaeyaGo.
 
 <p>
 
-Currently available: <strong>6 Tools</strong>
+Currently available:
+<strong id="toolCount"></strong>
+
+<section>
+
+<h2>🔥 Popular Tools</h2>
+
+<div class="grid">
+
+<div class="card">
+
+<h3>📈 Profit Margin Calculator</h3>
+
+<p>Find your profit, margin, and markup in seconds.</p>
+
+<a class="btn-secondary"
+href="profit-margin/index.html">
+
+Open Tool
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🛒 Marketplace Fee Calculator</h3>
+
+<p>Calculate your actual earnings after marketplace fees.</p>
+
+<a class="btn-secondary"
+href="marketplace-fee/index.html">
+
+Open Tool
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📦 Shipping Cost Calculator</h3>
+
+<p>Estimate shipping costs for your products.</p>
+
+<a class="btn-secondary"
+href="shipping-cost/index.html">
+
+Open Tool
+
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>🧾 VAT Calculator</h3>
+
+<p>Calculate VAT-inclusive and VAT-exclusive prices.</p>
+
+<a class="btn-secondary"
+href="vat/index.html">
+
+Open Tool
+
+</a>
+
+</div>
+
+</div>
+
+</section>
 
 </p>
 
 <input
 type="search"
+id="toolSearch"
 class="search-box"
-placeholder="Search tools...">
+placeholder="🔍 Search tools...">
+
+<div class="filter-chips">
+
+<button class="chip active" data-category="all">All</button>
+
+<button class="chip" data-category="finance">Finance</button>
+
+<button class="chip" data-category="ecommerce">Ecommerce</button>
+
+<button class="chip" data-category="shipping">Shipping</button>
+
+<button class="chip" data-category="documents">Documents</button>
+
+<button class="chip" data-category="utilities">Utilities</button>
+
+</div>
 
 <section class="categories">
 
@@ -127,9 +217,9 @@ Currency, importing and international business tools.
 
 </section>
 
-<div class="grid">
+<div class="grid" id="toolGrid">
 
-<div class="card">
+<div class="card finance">
 
 <h3>📈 Profit Margin Calculator</h3>
 
@@ -150,7 +240,7 @@ Open Tool
 
 </div>
 
-<div class="card">
+<div class="card finance">
 
 <h3>🏷️ Markup Calculator</h3>
 
@@ -171,7 +261,7 @@ Open Tool
 
 </div>
 
-<div class="card">
+<div class="card finance">
 
 <h3>📊 ROI Calculator</h3>
 
@@ -192,7 +282,7 @@ Open Tool
 
 </div>
 
-<div class="card">
+<div class="card finance">
 
 <h3>💲 Selling Price Calculator</h3>
 
@@ -213,7 +303,7 @@ Open Tool
 
 </div>
 
-<div class="card">
+<div class="card finance">
 
 <h3>📉 Break-even Calculator</h3>
 
@@ -234,7 +324,7 @@ Open Tool
 
 </div>
 
-<div class="card">
+<div class="card shipping">
 
 <h3>🏷️ Discount Calculator</h3>
 
@@ -248,6 +338,89 @@ Calculate discounts, savings, and final prices instantly.
 
 <a class="btn-secondary"
 href="discount/index.html">
+
+Open Tool
+
+</a>
+
+</div>
+
+<div class="card finance">
+
+<h3>📦 Shipping Cost Calculator</h3>
+
+<p><strong>Category:</strong> Shipping</p>
+
+<p>
+
+Estimate shipping costs based on weight and shipping rate.
+
+</p>
+
+<a class="btn-secondary"
+href="shipping-cost/index.html">
+
+Open Tool
+
+</a>
+
+</div>
+
+<div class="card finance">
+
+<h3>🧾 VAT Calculator</h3>
+
+<p><strong>Category:</strong> Finance</p>
+
+<p>
+
+Calculate VAT, VAT-exclusive price, and VAT-inclusive total instantly.
+
+</p>
+
+<a class="btn-secondary"
+href="vat/index.html">
+
+Open Tool
+
+</a>
+
+</div>
+
+<div class="card ecommerce">
+
+<h3>💼 Commission Calculator</h3>
+
+<p><strong>Category:</strong> Finance</p>
+
+<p>
+
+Calculate commission amount based on sales and commission rate.
+
+</p>
+
+<a class="btn-secondary" href="commission/index.html">
+
+Open Tool
+
+</a>
+
+</div>
+
+<div class="card coming-soon">
+
+<h3>🛒 Marketplace Fee Calculator</h3>
+
+<p><strong>Category:</strong> Ecommerce</p>
+
+<p>
+
+Calculate marketplace fees, net earnings, and profit for online sellers.
+
+</p>
+
+<a class="btn-secondary"
+href="marketplace-fee/index.html">
 
 Open Tool
 
@@ -300,6 +473,8 @@ Smart Business Tools for Online Sellers & Small Businesses.
 </div>
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 

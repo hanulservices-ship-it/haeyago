@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Marketplace Fee Calculator | HaeyaGo</title>
+
+<meta name="description" content="Free Marketplace Fee Calculator by HaeyaGo. Calculate marketplace fees, net profit, profit margin, and ROI for online sellers.">
+
+<meta name="theme-color" content="#27A9E1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="manifest" href="../../manifest.webmanifest">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container navbar">
+
+<a href="../../index.html" class="logo">
+
+Haeya<span>Go</span>
+
+</a>
+
+<nav>
+
+<a href="../../index.html">Home</a>
+
+<a href="../../tools/index.html">Tools</a>
+
+<a href="../../index.html#categories">Categories</a>
+
+<a href="../../pages/about.html">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<p class="breadcrumb">
+
+<a href="../../index.html">Home</a>
+
+>
+
+<a href="../../index.html#categories">Finance</a>
+
+>
+
+Marketplace Fee Calculator
+
+</p>
+
+<section class="card">
+
+<h1>
+
+Marketplace Fee Calculator
+
+</h1>
+
+<p>
+
+Calculate marketplace fees, selling costs, net profit, profit margin, and ROI before listing your products.
+
+</p>
+
+<hr>
+
+<div class="tool-container">
+
+<div class="form-group">
+
+<label>Marketplace</label>
+
+<select id="marketplace">
+
+<option value="shopee">Shopee</option>
+<option value="lazada">Lazada</option>
+<option value="tiktok">TikTok Shop</option>
+<option value="ebay">eBay</option>
+<option value="etsy">Etsy</option>
+<option value="custom">Custom Fee</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Currency</label>
+
+<select id="currency">
+
+<option value="₱">Philippine Peso (₱)</option>
+<option value="$">US Dollar ($)</option>
+<option value="₩">Korean Won (₩)</option>
+<option value="฿">Thai Baht (฿)</option>
+
+</select>
+
+</div>
+
+<div class="form-group">
+
+<label>Selling Price</label>
+
+<input
+type="number"
+id="sellingPrice"
+placeholder="0.00">
+
+</div>
+
+<div class="form-group">
+
+<label>Product Cost</label>
+
+<input
+type="number"
+id="productCost"
+placeholder="0.00">
+
+</div>
+
+<div class="form-group">
+
+<label>Marketplace Fee (%)</label>
+
+<input
+type="number"
+id="feeRate"
+placeholder="5">
+
+</div>
+
+<div class="buttons">
+
+<button class="btn-primary" id="calculateBtn">
+
+Calculate
+
+</button>
+
+<button class="btn-secondary" id="resetBtn">
+
+Reset
+
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+Enter your values, then tap Calculate.
+
+</div>
+
+<div
+class="buttons"
+id="resultButtons"
+style="display:none;">
+
+<button class="btn-secondary" id="copyBtn">
+
+Copy Result
+
+</button>
+
+<button class="btn-secondary" id="shareBtn">
+
+Share
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>How to Use</h2>
+
+<h3>Step 1: Select Your Marketplace</h3>
+
+<p>
+
+Choose the marketplace where you plan to sell your product. You can also select Custom Fee if you want to enter your own marketplace fee percentage.
+
+</p>
+
+<h3>Step 2: Select Your Currency</h3>
+
+<p>
+
+Choose the currency you want to use for the calculation.
+
+</p>
+
+<h3>Step 3: Enter the Selling Price</h3>
+
+<p>
+
+Enter the price your customer will pay for one item.
+
+</p>
+
+<h3>Step 4: Enter the Product Cost</h3>
+
+<p>
+
+Enter your total cost for one product before marketplace fees.
+
+</p>
+
+<h3>Step 5: Review the Marketplace Fee</h3>
+
+<p>
+
+The calculator automatically fills the fee for supported marketplaces. You can change it manually if needed.
+
+</p>
+
+<h3>Step 6: Tap Calculate</h3>
+
+<p>
+
+The calculator instantly shows your marketplace fee, net revenue, profit, profit margin, and ROI.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What is a marketplace fee?</h3>
+
+<p>
+
+A marketplace fee is the commission charged by an online marketplace for every successful sale.
+
+</p>
+
+<h3>Why is net revenue different from selling price?</h3>
+
+<p>
+
+Your marketplace deducts its commission before paying you, so your net revenue is lower than your selling price.
+
+</p>
+
+<h3>What is profit margin?</h3>
+
+<p>
+
+Profit margin shows what percentage of your selling price becomes profit after marketplace fees and product costs.
+
+</p>
+
+<h3>What is ROI?</h3>
+
+<p>
+
+Return on Investment (ROI) measures how much profit you earn compared to the cost of your product.
+
+</p>
+
+<h3>Can I use my own fee percentage?</h3>
+
+<p>
+
+Yes. Select Custom Fee and enter any marketplace commission percentage.
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Formula</h2>
+
+<h3>Marketplace Fee</h3>
+
+<p>
+
+Marketplace Fee = Selling Price × Fee Rate
+
+</p>
+
+<h3>Net Revenue</h3>
+
+<p>
+
+Net Revenue = Selling Price − Marketplace Fee
+
+</p>
+
+<h3>Profit</h3>
+
+<p>
+
+Profit = Net Revenue − Product Cost
+
+</p>
+
+<h3>Profit Margin</h3>
+
+<p>
+
+Profit Margin = (Profit ÷ Selling Price) × 100
+
+</p>
+
+<h3>Return on Investment (ROI)</h3>
+
+<p>
+
+ROI = (Profit ÷ Product Cost) × 100
+
+</p>
+
+<h3>Example</h3>
+
+<p>
+
+Selling Price = ₱500
+
+<br>
+
+Product Cost = ₱300
+
+<br>
+
+Marketplace Fee = 5%
+
+<br><br>
+
+Marketplace Fee = ₱25
+
+<br>
+
+Net Revenue = ₱475
+
+<br>
+
+Profit = ₱175
+
+<br>
+
+Profit Margin = 35.00%
+
+<br>
+
+ROI = 58.33%
+
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Related Tools</h2>
+
+<div class="related-tools">
+
+<a href="../profit-margin/index.html">
+📈 Profit Margin Calculator
+</a>
+
+<a href="../markup/index.html">
+🏷️ Markup Calculator
+</a>
+
+<a href="../import-cost/index.html">
+📦 Import Cost Calculator
+</a>
+
+<a href="../roi/index.html">
+📊 ROI Calculator
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container">
+
+<p><strong>HaeyaGo</strong></p>
+
+<p>
+
+Smart Business Tools for Online Sellers & Small Businesses.
+
+</p>
+
+<p>
+
+© 2026 HaeyaGo
+
+</p>
+
+</div>
+
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
