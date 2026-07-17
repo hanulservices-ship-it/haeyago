@@ -1,96 +1,111 @@
-const currency=document.getElementById("currency");
-const weight=document.getElementById("weight");
-const rate=document.getElementById("rate");
+const currency = document.getElementById("currency");
+const weight = document.getElementById("weight");
+const rate = document.getElementById("rate");
 
-const calculateBtn=document.getElementById("calculateBtn");
-const resetBtn=document.getElementById("resetBtn");
+const calculateBtn = document.getElementById("calculateBtn");
+const resetBtn = document.getElementById("resetBtn");
 
-const result=document.getElementById("result");
-const resultButtons=document.getElementById("resultButtons");
+const result = document.getElementById("result");
+const resultButtons = document.getElementById("resultButtons");
 
-const copyBtn=document.getElementById("copyBtn");
-const shareBtn=document.getElementById("shareBtn");
+const copyBtn = document.getElementById("copyBtn");
+const shareBtn = document.getElementById("shareBtn");
 
-let resultText="";
+let resultText = "";
 
-calculateBtn.addEventListener("click",()=>{
-
-const w=parseFloat(weight.value);
-const r=parseFloat(rate.value);
-
-if(isNaN(w)||isNaN(r)||w<=0||r<0){
-
-result.innerHTML="Please enter valid values.";
-
-resultButtons.style.display="none";
-
-return;
-
+function formatMoney(symbol, amount) {
+    return `${symbol}${amount.toLocaleString(undefined,{
+        minimumFractionDigits:2,
+        maximumFractionDigits:2
+    })}`;
 }
 
-const total=w*r;
+calculateBtn.addEventListener("click", () => {
 
-resultText=
+    const w = parseFloat(weight.value);
+    const r = parseFloat(rate.value);
 
-`${currency.value}${total.toFixed(2)}
+    if (isNaN(w) || w <= 0) {
+        alert("Please enter a valid package weight.");
+        weight.focus();
+        return;
+    }
 
-Package Weight: ${w} kg
+    if (isNaN(r) || r < 0) {
+        alert("Please enter a valid shipping rate.");
+        rate.focus();
+        return;
+    }
 
-Shipping Rate: ${currency.value}${r.toFixed(2)}/kg`;
+    const total = w * r;
 
-result.innerHTML=`
+    const money = formatMoney(currency.value, total);
+    const rateMoney = formatMoney(currency.value, r);
 
+    resultText =
+`Shipping Cost
+
+Total Shipping Cost:
+${money}
+
+Package Weight:
+${w} kg
+
+Shipping Rate:
+${rateMoney}/kg`;
+
+    result.innerHTML = `
 <h3>Total Shipping Cost</h3>
 
-<p><strong>${currency.value}${total.toFixed(2)}</strong></p>
+<p><strong>${money}</strong></p>
 
-<p>Package Weight: ${w} kg</p>
+<p><strong>Weight:</strong> ${w} kg</p>
 
-<p>Shipping Rate: ${currency.value}${r.toFixed(2)}/kg</p>
-
+<p><strong>Rate:</strong> ${rateMoney}/kg</p>
 `;
 
-resultButtons.style.display="flex";
+    resultButtons.style.display = "flex";
+});
+
+resetBtn.addEventListener("click", () => {
+
+    weight.value = "";
+    rate.value = "";
+
+    result.innerHTML =
+        "Enter the package weight and shipping rate, then tap Calculate.";
+
+    resultButtons.style.display = "none";
+
+    resultText = "";
+
+    weight.focus();
 
 });
 
-resetBtn.addEventListener("click",()=>{
+copyBtn.addEventListener("click", async () => {
 
-weight.value="";
-rate.value="";
+    await navigator.clipboard.writeText(resultText);
 
-result.innerHTML="Enter the package weight and shipping rate, then tap Calculate.";
-
-resultButtons.style.display="none";
+    alert("Result copied successfully.");
 
 });
 
-copyBtn.addEventListener("click",()=>{
+shareBtn.addEventListener("click", async () => {
 
-navigator.clipboard.writeText(resultText);
+    if (navigator.share) {
 
-alert("Result copied.");
+        await navigator.share({
+            title: "Shipping Cost Calculator",
+            text: resultText
+        });
 
-});
+    } else {
 
-shareBtn.addEventListener("click",async()=>{
+        await navigator.clipboard.writeText(resultText);
 
-if(navigator.share){
+        alert("Sharing isn't supported on this device.\nResult copied instead.");
 
-await navigator.share({
-
-title:"Shipping Cost Calculator",
-
-text:resultText
-
-});
-
-}else{
-
-navigator.clipboard.writeText(resultText);
-
-alert("Sharing isn't supported. Result copied instead.");
-
-}
+    }
 
 });
