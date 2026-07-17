@@ -2,192 +2,115 @@ const currency = document.getElementById("currency");
 
 const productCost = document.getElementById("productCost");
 const shippingCost = document.getElementById("shippingCost");
-const duty = document.getElementById("duty");
-const vat = document.getElementById("vat");
+const tax = document.getElementById("tax");
+const customs = document.getElementById("customs");
 const otherFees = document.getElementById("otherFees");
 const quantity = document.getElementById("quantity");
-const sellingPrice = document.getElementById("sellingPrice");
-
-const result = document.getElementById("result");
 
 const calculateBtn = document.getElementById("calculateBtn");
 const resetBtn = document.getElementById("resetBtn");
 
+const result = document.getElementById("result");
+const resultButtons = document.getElementById("resultButtons");
+
 const copyBtn = document.getElementById("copyBtn");
 const shareBtn = document.getElementById("shareBtn");
 
-const resultButtons = document.getElementById("resultButtons");
+let resultText = "";
 
 calculateBtn.addEventListener("click", () => {
 
-const product = Number(productCost.value);
-const shipping = Number(shippingCost.value);
-const customsRate = Number(duty.value);
-const vatRate = Number(vat.value);
-const fees = Number(otherFees.value);
+    const product = parseFloat(productCost.value) || 0;
+    const shipping = parseFloat(shippingCost.value) || 0;
+    const importTax = parseFloat(tax.value) || 0;
+    const customsFee = parseFloat(customs.value) || 0;
+    const other = parseFloat(otherFees.value) || 0;
+    const qty = parseInt(quantity.value);
 
-const qty = Number(quantity.value || 1);
+    if (qty <= 0 || isNaN(qty)) {
 
-const sellPrice = Number(sellingPrice.value);
+        result.innerHTML = "Please enter a valid quantity.";
 
-const subtotal = product + shipping;
+        resultButtons.style.display = "none";
 
-const customs = subtotal * (customsRate / 100);
+        return;
 
-const vatAmount =
-(subtotal + customs) * (vatRate / 100);
+    }
 
-const total =
-subtotal +
-customs +
-vatAmount +
-fees;
+    const total =
+        product +
+        shipping +
+        importTax +
+        customsFee +
+        other;
 
-const costPerItem = total / qty;
+    const perItem = total / qty;
 
-const revenue = sellPrice * qty;
+    resultText =
+`Total Import Cost: ${currency.value}${total.toFixed(2)}
 
-const profit = revenue - total;
+Cost Per Item: ${currency.value}${perItem.toFixed(2)}
 
-const profitPerItem = profit / qty;
+Quantity: ${qty}`;
 
-const profitMargin =
-revenue > 0
-? (profit / revenue) * 100
-: 0;
-
-const roi =
-total > 0
-? (profit / total) * 100
-: 0;
-
-const isProfit = profit >= 0;
-
-const status = isProfit
-? "🟢 Profitable"
-: "🔴 Loss";
-
-const symbol = currency.value;
-
-result.innerHTML = `
-
-<h2>${status}</h2>
-
+    result.innerHTML = `
 <h3>Total Import Cost</h3>
 
-<p><strong>${symbol}${total.toFixed(2)}</strong></p>
+<p><strong>${currency.value}${total.toFixed(2)}</strong></p>
 
 <hr>
 
-<p>
+<p>Cost Per Item: <strong>${currency.value}${perItem.toFixed(2)}</strong></p>
 
-Cost per Item
-
-<br>
-
-<strong>${symbol}${costPerItem.toFixed(2)}</strong>
-
-</p>
-
-<p>
-
-Revenue
-
-<br>
-
-<strong>${symbol}${revenue.toFixed(2)}</strong>
-
-</p>
-
-<p>
-
-Total Profit
-
-<br>
-
-<strong>${symbol}${profit.toFixed(2)}</strong>
-
-</p>
-
-<p>
-
-Profit per Item
-
-<br>
-
-<strong>${symbol}${profitPerItem.toFixed(2)}</strong>
-
-</p>
-
-<p>
-
-Profit Margin
-
-<br>
-
-<strong>${profitMargin.toFixed(2)}%</strong>
-
-</p>
-
-<p>
-
-ROI
-
-<br>
-
-<strong>${roi.toFixed(2)}%</strong>
-
-</p>
-
+<p>Quantity: ${qty}</p>
 `;
 
-resultButtons.style.display = "flex";
+    resultButtons.style.display = "flex";
 
 });
 
 resetBtn.addEventListener("click", () => {
 
-productCost.value = "";
+    productCost.value = "";
+    shippingCost.value = "";
+    tax.value = "";
+    customs.value = "";
+    otherFees.value = "";
+    quantity.value = "";
 
-shippingCost.value = "";
+    result.innerHTML =
+        "Enter all import costs, then tap <strong>Calculate</strong>.";
 
-duty.value = "";
-
-vat.value = "";
-
-otherFees.value = "";
-
-result.innerHTML =
-"Enter your import details, then tap Calculate.";
-
-resultButtons.style.display = "none";
+    resultButtons.style.display = "none";
 
 });
 
 copyBtn.addEventListener("click", () => {
 
-navigator.clipboard.writeText(result.innerText);
+    navigator.clipboard.writeText(resultText);
 
-alert("Result copied!");
+    alert("Result copied.");
 
 });
 
 shareBtn.addEventListener("click", async () => {
 
-if(navigator.share){
+    if (navigator.share) {
 
-await navigator.share({
+        await navigator.share({
 
-title:"Import Cost Calculator",
+            title: "Import Cost Calculator",
 
-text:result.innerText
+            text: resultText
 
-});
+        });
 
-}else{
+    } else {
 
-alert("Sharing is not supported on this device.");
+        navigator.clipboard.writeText(resultText);
 
-}
+        alert("Sharing isn't supported. Result copied instead.");
+
+    }
 
 });

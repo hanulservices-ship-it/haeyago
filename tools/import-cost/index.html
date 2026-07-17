@@ -1,17 +1,36 @@
 <!DOCTYPE html>
+
+<!--
+HaeyaGo Calculator Template v3.1
+Do not edit directly.
+Generate new calculators using new-tool.sh
+-->
+
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
+<meta name="author" content="HaeyaGo">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Import Cost Calculator | HaeyaGo</title>
 
-<meta name="description" content="Free Import Cost Calculator by HaeyaGo. Calculate landed cost, customs duty, VAT, shipping costs, and total import expenses.">
+<meta name="description" content="Free Import Cost Calculator by HaeyaGo. Calculate total landed cost including product cost, shipping, customs, taxes, and other import fees.">
+
+<meta name="keywords" content="import cost calculator, landed cost calculator, import tax calculator, customs calculator, shipping calculator">
+
+<link rel="canonical" href="https://haeyago.com/tools/import-cost/">
 
 <meta name="theme-color" content="#27A9E1">
+
+<link rel="icon" href="../../favicon.ico">
+
+<link rel="shortcut icon" href="../../favicon.ico">
+
+<meta name="robots" content="index,follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -27,7 +46,7 @@
 
 </head>
 
-<body>
+<body class="{{BODY_CLASS}}">
 
 <header>
 
@@ -39,7 +58,7 @@ Haeya<span>Go</span>
 
 </a>
 
-<nav>
+<nav aria-label="Main navigation">
 
 <a href="../../index.html">Home</a>
 
@@ -63,7 +82,7 @@ Haeya<span>Go</span>
 
 >
 
-<a href="../../index.html#categories">Finance</a>
+<a href="../../index.html#categories">Shipping</a>
 
 >
 
@@ -81,7 +100,7 @@ Import Cost Calculator
 
 <p>
 
-Estimate the total landed cost of imported products by including product cost, shipping, customs duty, VAT, and other fees.
+Calculate the total landed cost of imported products including shipping, customs duties, taxes, and additional fees.
 
 </p>
 
@@ -90,138 +109,63 @@ Estimate the total landed cost of imported products by including product cost, s
 <div class="tool-container">
 
 <div class="form-group">
-
 <label>Currency</label>
 
 <select id="currency">
-
 <option value="₱">Philippine Peso (₱)</option>
 <option value="$">US Dollar ($)</option>
 <option value="₩">Korean Won (₩)</option>
-<option value="¥">Japanese Yen (¥)</option>
 <option value="฿">Thai Baht (฿)</option>
+<option value="¥">Japanese Yen (¥)</option>
 <option value="€">Euro (€)</option>
-
 </select>
-
 </div>
 
 <div class="form-group">
-
 <label>Product Cost</label>
-
-<input
-type="number"
-id="productCost"
-inputmode="decimal"
-step="0.01"
-min="0"
-placeholder="0.00">
-
+<input type="number" id="productCost" min="0" step="0.01">
 </div>
 
 <div class="form-group">
-
 <label>Shipping Cost</label>
-
-<input
-type="number"
-id="shippingCost"
-inputmode="decimal"
-step="0.01"
-min="0"
-placeholder="0.00">
-
+<input type="number" id="shippingCost" min="0" step="0.01">
 </div>
 
 <div class="form-group">
-
-<label>Customs Duty (%)</label>
-
-<input
-type="number"
-id="duty"
-inputmode="decimal"
-step="0.01"
-min="0"
-placeholder="0">
-
+<label>Import Tax</label>
+<input type="number" id="tax" min="0" step="0.01">
 </div>
 
 <div class="form-group">
-
-<label>VAT (%)</label>
-
-<input
-type="number"
-id="vat"
-inputmode="decimal"
-step="0.01"
-min="0"
-placeholder="12">
-
+<label>Customs Fee</label>
+<input type="number" id="customs" min="0" step="0.01">
 </div>
 
 <div class="form-group">
-
 <label>Other Fees</label>
-
-<input
-type="number"
-id="otherFees"
-inputmode="decimal"
-step="0.01"
-min="0"
-placeholder="0.00">
-
+<input type="number" id="otherFees" min="0" step="0.01">
 </div>
 
 <div class="form-group">
-
 <label>Quantity</label>
-
-<input
-type="number"
-id="quantity"
-inputmode="numeric"
-min="1"
-placeholder="1">
-
-</div>
-
-<div class="form-group">
-
-<label>Selling Price per Item</label>
-
-<input
-type="number"
-id="sellingPrice"
-inputmode="decimal"
-step="0.01"
-min="0"
-placeholder="0.00">
-
+<input type="number" id="quantity" min="1" step="1">
 </div>
 
 <div class="buttons">
 
 <button class="btn-primary" id="calculateBtn">
-
 Calculate
-
 </button>
 
 <button class="btn-secondary" id="resetBtn">
-
 Reset
-
 </button>
 
 </div>
 
 <div class="result" id="result">
 
-Enter your import details, then tap Calculate.
+Enter all import costs, then tap <strong>Calculate</strong>.
 
 </div>
 
@@ -231,15 +175,11 @@ id="resultButtons"
 style="display:none;">
 
 <button class="btn-secondary" id="copyBtn">
-
 Copy Result
-
 </button>
 
 <button class="btn-secondary" id="shareBtn">
-
 Share
-
 </button>
 
 </div>
@@ -252,52 +192,34 @@ Share
 
 <h2>How to Use</h2>
 
-<h3>Step 1: Select Your Currency</h3>
+<h3>Step 1: Enter Product Cost</h3>
 
 <p>
-
-Choose the currency you want to use for your import cost calculation.
-
+Enter the total purchase price of your products.
 </p>
 
-<h3>Step 2: Enter Product Cost</h3>
+<h3>Step 2: Enter Shipping Cost</h3>
 
 <p>
-
-Input the total purchase cost of your products from the supplier.
-
+Enter the amount you paid for shipping.
 </p>
 
-<h3>Step 3: Enter Shipping Cost</h3>
+<h3>Step 3: Enter Taxes and Fees</h3>
 
 <p>
-
-Include international shipping, freight, or courier costs.
-
+Include import tax, customs fees, and any additional charges.
 </p>
 
-<h3>Step 4: Enter Taxes and Fees</h3>
+<h3>Step 4: Enter Quantity</h3>
 
 <p>
-
-Enter the customs duty percentage, VAT percentage, and any additional import fees.
-
+Enter the total number of items being imported.
 </p>
 
-<h3>Step 5: Enter Quantity and Selling Price</h3>
+<h3>Step 5: Tap Calculate</h3>
 
 <p>
-
-Input the number of items you imported and your planned selling price per item.
-
-</p>
-
-<h3>Step 6: Tap Calculate</h3>
-
-<p>
-
-The calculator will instantly show your total import cost, landed cost per item, revenue, profit, profit margin, and ROI.
-
+The calculator will display your total landed cost and the cost per item.
 </p>
 
 </section>
@@ -306,44 +228,22 @@ The calculator will instantly show your total import cost, landed cost per item,
 
 <h2>Frequently Asked Questions</h2>
 
-<h3>What is an import cost?</h3>
-
-<p>
-
-Import cost is the total amount you spend to bring products into your country. It usually includes the product price, shipping, customs duties, taxes, and other related fees.
-
-</p>
-
 <h3>What is landed cost?</h3>
 
 <p>
-
-Landed cost is the complete cost of getting a product to your destination. Knowing your landed cost helps you price your products accurately and avoid unexpected losses.
-
+Landed cost is the total cost of importing products, including the purchase price, shipping, customs duties, taxes, and other fees.
 </p>
 
-<h3>Why should I calculate cost per item?</h3>
+<h3>Why calculate cost per item?</h3>
 
 <p>
-
-Cost per item shows how much each imported product actually costs after all expenses are included. This makes it easier to set profitable selling prices.
-
+Knowing the cost per item helps you price products correctly and calculate your profit margin.
 </p>
 
-<h3>What is ROI?</h3>
+<h3>Can I leave some fees blank?</h3>
 
 <p>
-
-ROI (Return on Investment) measures how much profit you earn compared to your total investment. A higher ROI generally indicates a more profitable business.
-
-</p>
-
-<h3>Can I use this calculator for bulk imports?</h3>
-
-<p>
-
-Yes. This calculator works for both small and large shipments, making it useful for online sellers, importers, resellers, and small businesses.
-
+Yes. Any fee left blank will automatically be treated as zero.
 </p>
 
 </section>
@@ -352,107 +252,21 @@ Yes. This calculator works for both small and large shipments, making it useful 
 
 <h2>Formula</h2>
 
-<h3>Total Import Cost</h3>
-
 <p>
 
-Total Import Cost = Product Cost + Shipping Cost + Customs Duty + VAT + Other Fees
+Total Import Cost =
+Product Cost +
+Shipping Cost +
+Import Tax +
+Customs Fee +
+Other Fees
 
 </p>
 
-<h3>Cost per Item</h3>
-
 <p>
 
-Cost per Item = Total Import Cost ÷ Quantity
-
-</p>
-
-<h3>Total Revenue</h3>
-
-<p>
-
-Revenue = Selling Price × Quantity
-
-</p>
-
-<h3>Total Profit</h3>
-
-<p>
-
-Profit = Revenue − Total Import Cost
-
-</p>
-
-<h3>Profit Margin</h3>
-
-<p>
-
-Profit Margin = (Profit ÷ Revenue) × 100
-
-</p>
-
-<h3>Return on Investment (ROI)</h3>
-
-<p>
-
-ROI = (Profit ÷ Total Import Cost) × 100
-
-</p>
-
-<h3>Example</h3>
-
-<p>
-
-Product Cost = ₱10,000
-
-<br>
-
-Shipping Cost = ₱2,000
-
-<br>
-
-Customs Duty = ₱1,200
-
-<br>
-
-VAT = ₱1,584
-
-<br>
-
-Other Fees = ₱500
-
-<br>
-
-Quantity = 50
-
-<br>
-
-Selling Price = ₱450
-
-<br><br>
-
-Total Import Cost = ₱15,284
-
-<br>
-
-Cost per Item = ₱305.68
-
-<br>
-
-Revenue = ₱22,500
-
-<br>
-
-Profit = ₱7,216
-
-<br>
-
-Profit Margin = 32.07%
-
-<br>
-
-ROI = 47.21%
+Cost Per Item =
+Total Import Cost ÷ Quantity
 
 </p>
 
@@ -464,21 +278,13 @@ ROI = 47.21%
 
 <div class="related-tools">
 
-<a href="../profit-margin/index.html">
-📈 Profit Margin Calculator
-</a>
+<a href="../shipping-cost/index.html">Shipping Cost Calculator</a>
 
-<a href="../markup/index.html">
-🏷️ Markup Calculator
-</a>
+<a href="../marketplace-fee/index.html">Marketplace Fee Calculator</a>
 
-<a href="../roi/index.html">
-📊 ROI Calculator
-</a>
+<a href="../profit-margin/index.html">Profit Margin Calculator</a>
 
-<a href="../marketplace-fee/index.html">
-🛒 Marketplace Fee Calculator
-</a>
+<a href="../selling-price/index.html">Selling Price Calculator</a>
 
 </div>
 
@@ -488,20 +294,48 @@ ROI = 47.21%
 
 <footer>
 
-<div class="container">
+<div class="container footer">
 
-<p><strong>HaeyaGo</strong></p>
+<div>
+
+<h3 class="logo">
+Haeya<span>Go</span>
+</h3>
 
 <p>
-
 Smart Business Tools for Online Sellers & Small Businesses.
-
 </p>
 
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<ul class="footer-links">
+
+<li><a href="../../index.html">Home</a></li>
+
+<li><a href="../../tools/index.html">All Tools</a></li>
+
+<li><a href="../../pages/about.html">About</a></li>
+
+<li><a href="../../pages/contact.html">Contact</a></li>
+
+<li><a href="../../pages/privacy.html">Privacy Policy</a></li>
+
+<li><a href="../../pages/terms.html">Terms of Service</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="container copyright">
+
 <p>
-
-© 2026 HaeyaGo
-
+© 2026 HaeyaGo. All rights reserved.
 </p>
 
 </div>
