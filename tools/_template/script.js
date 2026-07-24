@@ -1,96 +1,80 @@
-const currency=document.getElementById("currency");
-const weight=document.getElementById("weight");
-const rate=document.getElementById("rate");
+{{JS_INPUTS}}
 
-const calculateBtn=document.getElementById("calculateBtn");
-const resetBtn=document.getElementById("resetBtn");
+const calculateBtn = document.getElementById("calculateBtn");
+const resetBtn = document.getElementById("resetBtn");
 
-const result=document.getElementById("result");
-const resultButtons=document.getElementById("resultButtons");
+const result = document.getElementById("result");
 
-const copyBtn=document.getElementById("copyBtn");
-const shareBtn=document.getElementById("shareBtn");
+const resultButtons = document.getElementById("resultButtons");
 
-let resultText="";
+const copyBtn = document.getElementById("copyBtn");
+const shareBtn = document.getElementById("shareBtn");
 
-calculateBtn.addEventListener("click",()=>{
+let resultText = "";
 
-const w=parseFloat(weight.value);
-const r=parseFloat(rate.value);
+calculateBtn.addEventListener("click", () => {
 
-if(isNaN(w)||isNaN(r)||w<=0||r<0){
+    resultText = "{{RESULT_TITLE}}";
 
-result.innerHTML="Please enter valid values.";
+    {{PARSER}}
 
-resultButtons.style.display="none";
+    {{FORMULA}}
 
-return;
-
-}
-
-const total=w*r;
-
-resultText=
-
-`${currency.value}${total.toFixed(2)}
-
-Package Weight: ${w} kg
-
-Shipping Rate: ${currency.value}${r.toFixed(2)}/kg`;
-
-result.innerHTML=`
-
-<h3>Total Shipping Cost</h3>
-
-<p><strong>${currency.value}${total.toFixed(2)}</strong></p>
-
-<p>Package Weight: ${w} kg</p>
-
-<p>Shipping Rate: ${currency.value}${r.toFixed(2)}/kg</p>
-
-`;
-
-resultButtons.style.display="flex";
+    resultButtons.style.display = "flex";
 
 });
 
-resetBtn.addEventListener("click",()=>{
+resetBtn.addEventListener("click", () => {
 
-weight.value="";
-rate.value="";
+    result.innerHTML =
+    "Enter the required values, then tap Calculate.";
 
-result.innerHTML="Enter the package weight and shipping rate, then tap Calculate.";
-
-resultButtons.style.display="none";
+    resultButtons.style.display = "none";
 
 });
 
-copyBtn.addEventListener("click",()=>{
+copyBtn.addEventListener("click", async () => {
 
-navigator.clipboard.writeText(resultText);
+    try {
 
-alert("Result copied.");
+        await navigator.clipboard.writeText(resultText);
 
-});
+        alert("Result copied!");
 
-shareBtn.addEventListener("click",async()=>{
+    } catch {
 
-if(navigator.share){
+        alert("Unable to copy.");
 
-await navigator.share({
-
-title:"Shipping Cost Calculator",
-
-text:resultText
+    }
 
 });
 
-}else{
+shareBtn.addEventListener("click", async () => {
 
-navigator.clipboard.writeText(resultText);
+    if (navigator.share) {
 
-alert("Sharing isn't supported. Result copied instead.");
+        await navigator.share({
 
-}
+            title: document.title,
+
+            text: resultText
+
+        });
+
+    } else {
+
+        try {
+
+            await navigator.clipboard.writeText(resultText);
+
+            alert("Sharing isn't supported. Result copied instead.");
+
+        } catch {
+
+            alert("Unable to share.");
+
+        }
+
+    }
 
 });

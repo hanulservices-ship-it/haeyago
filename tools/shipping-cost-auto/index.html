@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<!--
+HaeyaGo Calculator Template v3.1
+Do not edit directly.
+Generate new calculators using new-tool.sh
+-->
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="author" content="HaeyaGo">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shipping Cost Calculator | HaeyaGo</title>
+
+<meta name="description" content="Calculate shipping cost">
+
+<meta name="keywords" content="shipping,cost">
+
+<link rel="canonical" href="https://haeyago.com/tools/shipping-cost-auto/">
+
+<meta name="theme-color" content="#27A9E1">
+
+<link rel="icon" href="../../favicon.ico">
+
+<link rel="shortcut icon" href="../../favicon.ico">
+
+<meta name="robots" content="index,follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="manifest" href="../../manifest.webmanifest">
+
+{{EXTRA_HEAD}}
+
+</head>
+
+<body class="{{BODY_CLASS}}">
+
+<header>
+
+<div class="container navbar">
+
+<a href="../../index.html" class="logo">
+
+Haeya<span>Go</span>
+
+</a>
+
+<nav aria-label="Main navigation">
+
+<a href="../../index.html">Home</a>
+
+<a href="../../tools/index.html">Tools</a>
+
+<a href="../../index.html#categories">Categories</a>
+
+<a href="../../pages/about.html">About</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<main class="container">
+
+<p class="breadcrumb">
+
+<a href="../../index.html">Home</a>
+
+>
+
+<a href="../../index.html#categories">Shipping</a>
+
+>
+
+Shipping Cost Calculator
+
+</p>
+
+<section class="card">
+
+<h1>
+
+Shipping Cost Calculator
+
+</h1>
+
+<p>
+
+{{TOOL_INTRO}}
+
+</p>
+
+<hr>
+
+<div class="tool-container">
+
+
+
+<div class="form-group">
+
+<label>Weight</label>
+
+<input
+type="number"
+id="weight"
+inputmode="decimal"
+step="0.01"
+min="0"
+placeholder="0.00">
+
+</div>
+
+<div class="form-group">
+
+<label>Shipping Rate</label>
+
+<input
+type="number"
+id="shipping-rate"
+inputmode="decimal"
+step="0.01"
+min="0"
+placeholder="0.00">
+
+</div>
+
+<div class="form-group">
+
+<label>Insurance</label>
+
+<input
+type="number"
+id="insurance"
+inputmode="decimal"
+step="0.01"
+min="0"
+placeholder="0.00">
+
+</div>
+
+<div class="buttons">
+
+<button class="btn-primary" id="calculateBtn">
+Calculate
+</button>
+
+<button class="btn-secondary" id="resetBtn">
+Reset
+</button>
+
+</div>
+
+<div class="result" id="result">
+
+{{DEFAULT_RESULT}}
+
+</div>
+
+<div
+class="buttons"
+id="resultButtons"
+style="display:none;">
+
+<button class="btn-secondary" id="copyBtn">
+Copy Result
+</button>
+
+<button class="btn-secondary" id="shareBtn">
+Share
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+{{HOW_TO_USE}}
+
+{{FAQ}}
+
+{{FORMULA}}
+
+<section class="card">
+
+<h2>Related Tools</h2>
+
+{{RELATED_TOOLS}}
+
+</section>
+
+</main>
+
+<footer>
+
+<div class="container footer">
+
+<div>
+
+<h3 class="logo">
+Haeya<span>Go</span>
+</h3>
+
+<p>
+Smart Business Tools for Online Sellers & Small Businesses.
+</p>
+
+</div>
+
+<div>
+
+<h4>Quick Links</h4>
+
+<ul class="footer-links">
+
+<li><a href="../../index.html">Home</a></li>
+
+<li><a href="../../tools/index.html">All Tools</a></li>
+
+<li><a href="../../pages/about.html">About</a></li>
+
+<li><a href="../../pages/contact.html">Contact</a></li>
+
+<li><a href="../../pages/privacy.html">Privacy Policy</a></li>
+
+<li><a href="../../pages/terms.html">Terms of Service</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="container copyright">
+
+<p>
+© {{CURRENT_YEAR}} HaeyaGo. All rights reserved.
+</p>
+
+</div>
+
+</footer>
+
+<script src="../../assets/js/script.js"></script>
+
+{{EXTRA_SCRIPTS}}
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

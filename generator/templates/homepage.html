@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HaeyaGo Calculators</title>
+
+<meta name="description" content="HaeyaGo Online Calculators">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/css/style.css">
+
+</head>
+
+<body>
+
+<main>
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<h1>
+
+Smart Business Tools
+for Online Sellers &
+Small Businesses
+
+</h1>
+
+<p>
+
+Free business calculators and productivity tools to help you save time, reduce mistakes, and grow your business.
+
+</p>
+
+<input
+type="search"
+id="toolSearch"
+class="search-box"
+placeholder="Search business tools...">
+
+<div id="searchResults" class="search-results"></div>
+
+<div class="buttons">
+
+<a href="#recent" class="btn-primary">
+
+Browse Tools
+
+</a>
+
+<a href="tools/index.html" class="btn-secondary">
+
+All Tools
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div class="hero-stat">
+
+<h3>{{TOTAL_TOOLS}}</h3>
+
+<p>Business Tools</p>
+
+</div>
+
+<div class="hero-stat">
+
+<h3>{{TOTAL_CATEGORIES}}</h3>
+
+<p>Categories</p>
+
+</div>
+
+<div class="hero-stat">
+
+<h3>100%</h3>
+
+<p>Free</p>
+
+</div>
+
+<div class="hero-stat">
+
+<h3>Mobile</h3>
+
+<p>Friendly</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section
+class="container"
+id="recent">
+
+<h2>
+
+Recently Added
+
+</h2>
+
+<div class="grid">
+
+{{RECENT_TOOLS}}
+
+</div>
+
+</section>
+
+<section class="container featured-section">
+
+<h2>
+
+Featured Tools
+
+</h2>
+
+<div class="grid">
+
+{{FEATURED_TOOLS}}
+
+</div>
+
+</section>
+
+</main>
+
+</body>
+
+</html>

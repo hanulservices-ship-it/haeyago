@@ -1,0 +1,6 @@
+HaeyaGo Generator Test
+
+If you can read this,
+the Node.js generator successfully created this file.
+
+Congratulations!

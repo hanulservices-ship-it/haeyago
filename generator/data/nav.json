@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Tools",
+        "url": "/tools/index.html"
+    },
+    {
+        "title": "Categories",
+        "url": "/categories/index.html"
+    },
+    {
+        "title": "About",
+        "url": "/pages/about.html"
+    },
+    {
+        "title": "Contact",
+        "url": "/pages/contact.html"
+    }
+]

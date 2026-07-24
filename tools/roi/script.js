@@ -1,62 +1,39 @@
-const costInput = document.getElementById("cost");
-const sellingInput = document.getElementById("selling");
-const currency = document.getElementById("currency");
+const investment = document.getElementById("investment");
+const profit = document.getElementById("profit");
 
-const result = document.getElementById("result");
 
 const calculateBtn = document.getElementById("calculateBtn");
 const resetBtn = document.getElementById("resetBtn");
-const copyBtn = document.getElementById("copyBtn");
-const shareBtn = document.getElementById("shareBtn");
+
+const result = document.getElementById("result");
+
 const resultButtons = document.getElementById("resultButtons");
 
-let lastResult = "";
+const copyBtn = document.getElementById("copyBtn");
+const shareBtn = document.getElementById("shareBtn");
+
+let resultText = "";
 
 calculateBtn.addEventListener("click", () => {
 
-    const investment = parseFloat(costInput.value);
-    const revenue = parseFloat(sellingInput.value);
+    resultText = "ROI Calculator";
 
-    if (isNaN(investment) || isNaN(revenue) || investment <= 0 || revenue <= 0) {
+    
+const investment_value = parseFloat(investment.value);
 
-        result.innerHTML = `
-        <div class="result-item">
-            <h4>Invalid Input</h4>
-            <p>Please enter valid Investment and Revenue values.</p>
-        </div>`;
 
-        resultButtons.style.display = "none";
-        lastResult = "";
-        return;
-    }
+const profit_value = parseFloat(profit.value);
 
-    const profit = revenue - investment;
-    const roi = (profit / investment) * 100;
-    const symbol = currency.value;
 
-    lastResult =
-`Investment: ${symbol}${investment.toFixed(2)}
-Revenue: ${symbol}${revenue.toFixed(2)}
-Profit: ${symbol}${profit.toFixed(2)}
-ROI: ${roi.toFixed(2)}%`;
 
-    result.innerHTML = `
-<div class="result-card">
+    
+const total = (profit_value / investment_value) * 100;
 
-<div class="result-item">
-<h4>ROI</h4>
-<p>${roi.toFixed(2)}%</p>
-</div>
+result.innerHTML = `
+<h3>ROI</h3>
+<p><strong>${total.toFixed(2)}%</strong></p>
+`;
 
-<div class="result-item">
-<h4>Profit</h4>
-<p>${symbol}${profit.toLocaleString(undefined,{
-minimumFractionDigits:2,
-maximumFractionDigits:2
-})}</p>
-</div>
-
-</div>`;
 
     resultButtons.style.display = "flex";
 
@@ -64,13 +41,8 @@ maximumFractionDigits:2
 
 resetBtn.addEventListener("click", () => {
 
-    costInput.value = "";
-    sellingInput.value = "";
-    currency.selectedIndex = 0;
-
-    result.innerHTML = "Enter values then tap Calculate.";
-
-    lastResult = "";
+    result.innerHTML =
+    "Enter the required values, then tap Calculate.";
 
     resultButtons.style.display = "none";
 
@@ -78,59 +50,46 @@ resetBtn.addEventListener("click", () => {
 
 copyBtn.addEventListener("click", async () => {
 
-    if (!lastResult) {
+    try {
 
-        alert("Nothing to copy.");
-        return;
+        await navigator.clipboard.writeText(resultText);
+
+        alert("Result copied!");
+
+    } catch {
+
+        alert("Unable to copy.");
 
     }
-
-    await navigator.clipboard.writeText(lastResult);
-
-    alert("Result copied!");
 
 });
 
 shareBtn.addEventListener("click", async () => {
 
-    if (!lastResult) {
-
-        alert("Nothing to share.");
-        return;
-
-    }
-
     if (navigator.share) {
 
-        try {
+        await navigator.share({
 
-            await navigator.share({
+            title: document.title,
 
-                title: "ROI Calculator",
-                text: lastResult
+            text: resultText
 
-            });
-
-        } catch (e) {}
+        });
 
     } else {
 
-        alert("Sharing is not supported on this device.");
+        try {
 
-    }
+            await navigator.clipboard.writeText(resultText);
 
-});
+            alert("Sharing isn't supported. Result copied instead.");
 
-[costInput, sellingInput].forEach(input => {
+        } catch {
 
-    input.addEventListener("keydown", e => {
-
-        if (e.key === "Enter") {
-
-            calculateBtn.click();
+            alert("Unable to share.");
 
         }
 
-    });
+    }
 
 });

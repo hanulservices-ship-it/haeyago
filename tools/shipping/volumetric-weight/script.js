@@ -18,6 +18,7 @@ const shareBtn = document.getElementById("shareBtn");
 
 const result = document.getElementById("result");
 const resultButtons = document.getElementById("resultButtons");
+let resultText = "";
 
 divisor.addEventListener("change", () => {
 
@@ -85,6 +86,13 @@ calculateBtn.addEventListener("click", () => {
 
     const chargeable =
         Math.max(volumetric, aw);
+    
+    resultText =
+`Volumetric Weight: ${volumetric.toFixed(2)} kg
+
+Actual Weight: ${aw.toFixed(2)} kg
+
+Chargeable Weight: ${chargeable.toFixed(2)} kg`;
 
     result.innerHTML = `
 <h3>Calculation Result</h3>
@@ -137,9 +145,7 @@ copyBtn.addEventListener("click", async () => {
 
     try {
 
-        await navigator.clipboard.writeText(
-            result.innerText
-        );
+        await navigator.clipboard.writeText(resultText);
 
         alert("Result copied!");
 
@@ -153,17 +159,14 @@ copyBtn.addEventListener("click", async () => {
 
 shareBtn.addEventListener("click", async () => {
 
-    const text = result.innerText;
+    const text = resultText;
 
     if (navigator.share) {
 
-        navigator.share({
-
-            title: "Volumetric Weight Calculator",
-
-            text
-
-        });
+        await navigator.share({
+    title: "Volumetric Weight Calculator",
+    text
+});
 
     } else {
 

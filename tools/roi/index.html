@@ -1,17 +1,36 @@
 <!DOCTYPE html>
+
+<!--
+HaeyaGo Calculator Template v3.1
+Do not edit directly.
+Generate new calculators using new-tool.sh
+-->
+
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
 
+<meta name="author" content="HaeyaGo">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ROI Calculator | HaeyaGo</title>
 
-<meta name="description" content="Free ROI Calculator by HaeyaGo. Calculate your Return on Investment (ROI), profit, and investment performance instantly.">
+<meta name="description" content="Calculate Return on Investment.">
+
+<meta name="keywords" content="roi calculator, return on investment, investment calculator">
+
+<link rel="canonical" href="https://haeyago.com/tools/roi/">
 
 <meta name="theme-color" content="#27A9E1">
+
+<link rel="icon" href="../../favicon.ico">
+
+<link rel="shortcut icon" href="../../favicon.ico">
+
+<meta name="robots" content="index,follow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -25,9 +44,11 @@
 
 <link rel="manifest" href="../../manifest.webmanifest">
 
+{{EXTRA_HEAD}}
+
 </head>
 
-<body>
+<body class="{{BODY_CLASS}}">
 
 <header>
 
@@ -39,7 +60,7 @@ Haeya<span>Go</span>
 
 </a>
 
-<nav>
+<nav aria-label="Main navigation">
 
 <a href="../../index.html">Home</a>
 
@@ -81,7 +102,7 @@ ROI Calculator
 
 <p>
 
-Calculate your Return on Investment (ROI), profit, and investment performance based on your investment and revenue.
+{{TOOL_INTRO}}
 
 </p>
 
@@ -89,46 +110,32 @@ Calculate your Return on Investment (ROI), profit, and investment performance ba
 
 <div class="tool-container">
 
+
+
 <div class="form-group">
 
 <label>Investment</label>
 
-<div class="input-group">
-
-<select id="currency">
-
-<option value="₱">Philippine Peso (₱)</option>
-<option value="$">US Dollar ($)</option>
-<option value="₩">Korean Won (₩)</option>
-<option value="฿">Thai Baht (฿)</option>
-<option value="¥">Japanese Yen (¥)</option>
-<option value="€">Euro (€)</option>
-<option value="£">British Pound (£)</option>
-
-</select>
-
 <input
 type="number"
+id="investment"
 inputmode="decimal"
 step="0.01"
 min="0"
-id="cost"
 placeholder="0.00">
-
-</div>
 
 </div>
 
 <div class="form-group">
 
-<label>Revenue</label>
+<label>Profit</label>
 
 <input
 type="number"
+id="profit"
 inputmode="decimal"
 step="0.01"
 min="0"
-id="selling"
 placeholder="0.00">
 
 </div>
@@ -136,22 +143,18 @@ placeholder="0.00">
 <div class="buttons">
 
 <button class="btn-primary" id="calculateBtn">
-
 Calculate
-
 </button>
 
 <button class="btn-secondary" id="resetBtn">
-
 Reset
-
 </button>
 
 </div>
 
 <div class="result" id="result">
 
-Enter your Investment and Revenue, then tap Calculate.
+{{DEFAULT_RESULT}}
 
 </div>
 
@@ -161,15 +164,11 @@ id="resultButtons"
 style="display:none;">
 
 <button class="btn-secondary" id="copyBtn">
-
 Copy Result
-
 </button>
 
 <button class="btn-secondary" id="shareBtn">
-
 Share
-
 </button>
 
 </div>
@@ -178,135 +177,17 @@ Share
 
 </section>
 
-<section class="card">
+{{HOW_TO_USE}}
 
-<h2>How to Use</h2>
+{{FAQ}}
 
-<h3>Step 1: Enter Your Investment</h3>
-
-<p>
-Enter the total amount you invested in your project, business, or product.
-</p>
-
-<h3>Step 2: Enter Your Revenue</h3>
-
-<p>
-Enter the total revenue or income generated from that investment.
-</p>
-
-<h3>Step 3: Tap Calculate</h3>
-
-<p>
-The calculator will display your Profit and Return on Investment (ROI) percentage.
-</p>
-
-<h3>Example</h3>
-
-<p>
-If you invested <strong>₱10,000</strong> and earned <strong>₱13,000</strong>, your Profit is <strong>₱3,000</strong> and your ROI is <strong>30%</strong>.
-</p>
-
-</section>
-
-<section class="card">
-
-<h2>Frequently Asked Questions</h2>
-
-<h3>What is ROI?</h3>
-
-<p>
-ROI stands for Return on Investment. It measures how much profit you earn compared to the amount you invested.
-</p>
-
-<h3>What does a higher ROI mean?</h3>
-
-<p>
-A higher ROI generally means your investment generated a greater return relative to its cost.
-</p>
-
-<h3>Can ROI be negative?</h3>
-
-<p>
-Yes. If your revenue is lower than your investment, your ROI will be negative, indicating a loss.
-</p>
-
-<h3>Who can use this calculator?</h3>
-
-<p>
-Business owners, online sellers, freelancers, investors, and anyone who wants to evaluate the performance of an investment.
-</p>
-
-</section>
-
-<section class="card">
-
-<h2>
-
-Formula
-
-</h2>
-
-<h3>Profit</h3>
-
-<p>
-
-Profit = Revenue − Investment
-
-</p>
-
-<h3>ROI (%)</h3>
-
-<p>
-
-ROI = (Profit ÷ Investment) × 100
-
-</p>
-
-<h3>Example</h3>
-
-<p>
-
-Investment = ₱10,000
-
-<br>
-
-Revenue = ₱13,000
-
-<br><br>
-
-Profit = ₱3,000
-
-<br>
-
-ROI = 30.00%
-
-</p>
-
-</section>
+{{FORMULA}}
 
 <section class="card">
 
 <h2>Related Tools</h2>
 
-<div class="related-tools">
-
-<a href="../profit-margin/index.html">
-Profit Margin Calculator
-</a>
-
-<a href="../markup/index.html">
-Markup Calculator
-</a>
-
-<a href="../roi/index.html">
-ROI Calculator
-</a>
-
-<a href="../selling-price/index.html">
-Selling Price Calculator
-</a>
-
-</div>
+{{RELATED_TOOLS}}
 
 </section>
 
@@ -314,25 +195,57 @@ Selling Price Calculator
 
 <footer>
 
-<div class="container">
+<div class="container footer">
 
-<p><strong>HaeyaGo</strong></p>
+<div>
+
+<h3 class="logo">
+Haeya<span>Go</span>
+</h3>
 
 <p>
-
 Smart Business Tools for Online Sellers & Small Businesses.
-
 </p>
 
-<p>
+</div>
 
-© 2026 HaeyaGo</p>
+<div>
+
+<h4>Quick Links</h4>
+
+<ul class="footer-links">
+
+<li><a href="../../index.html">Home</a></li>
+
+<li><a href="../../tools/index.html">All Tools</a></li>
+
+<li><a href="../../pages/about.html">About</a></li>
+
+<li><a href="../../pages/contact.html">Contact</a></li>
+
+<li><a href="../../pages/privacy.html">Privacy Policy</a></li>
+
+<li><a href="../../pages/terms.html">Terms of Service</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+<div class="container copyright">
+
+<p>
+© {{CURRENT_YEAR}} HaeyaGo. All rights reserved.
+</p>
 
 </div>
 
 </footer>
 
 <script src="../../assets/js/script.js"></script>
+
+{{EXTRA_SCRIPTS}}
 
 <script src="script.js"></script>
 

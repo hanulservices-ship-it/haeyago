@@ -15,6 +15,8 @@ const shareBtn = document.getElementById("shareBtn");
 
 const resultButtons = document.getElementById("resultButtons");
 
+let resultText = "";
+
 // Default fee presets
 marketplace.addEventListener("change", () => {
 
@@ -62,6 +64,19 @@ const status =
 profit >= 0
 ? "🟢 Profitable"
 : "🔴 Loss";
+
+resultText =
+`${status}
+
+Marketplace Fee: ${symbol}${marketplaceFee.toFixed(2)}
+
+Net Revenue: ${symbol}${netRevenue.toFixed(2)}
+
+Profit: ${symbol}${profit.toFixed(2)}
+
+Profit Margin: ${margin.toFixed(2)}%
+
+ROI: ${roi.toFixed(2)}%`;
 
 result.innerHTML = `
 
@@ -113,7 +128,7 @@ resultButtons.style.display = "none";
 
 copyBtn.addEventListener("click", () => {
 
-navigator.clipboard.writeText(result.innerText);
+navigator.clipboard.writeText(resultText);
 
 alert("Result copied!");
 
@@ -125,13 +140,25 @@ if (navigator.share) {
 
 await navigator.share({
 title: "Marketplace Fee Calculator",
-text: result.innerText
+text: resultText
 });
 
 } else {
 
-alert("Sharing is not supported on this device.");
+    try {
+
+        await navigator.clipboard.writeText(resultText);
+
+        alert("Sharing isn't supported. Result copied instead.");
+
+    } catch {
+
+        alert("Unable to share or copy.");
+
+    }
 
 }
+
+});
 
 });

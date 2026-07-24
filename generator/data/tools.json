@@ -1,0 +1,32 @@
+[
+    {
+        "title": "ROI Calculator",
+        "slug": "roi",
+        "category": "Finance",
+        "description": "Calculate Return on Investment.",
+        "keywords": "roi calculator, return on investment, investment calculator",
+        "created": "2026-07-22T00:00:00.000Z",
+        "featured": false,
+        "icon": "🧮"
+    },
+    {
+        "title": "Shipping Cost Sample",
+        "slug": "shipping-sample",
+        "category": "Test",
+        "description": "Test with",
+        "keywords": "test with",
+        "created": "2026-07-22T00:00:00.000Z",
+        "featured": false,
+        "icon": "🧮"
+    },
+    {
+        "title": "Profit Margin Calculator",
+        "slug": "profit-margin",
+        "category": "Finance",
+        "description": "Calculate your profit margin percentage.",
+        "keywords": "profit margin calculator, margin calculator, business calculator",
+        "created": "2026-07-22T00:00:00.000Z",
+        "featured": true,
+        "icon": "📈"
+    }
+]
